@@ -79,7 +79,10 @@ metadata/_edit_lock_ = true
 script = ExtResource("7_ao0nd")
 
 [node name="CamPan" type="Camera2D" parent="Gui/Camera"]
+position = Vector2(312, 0)
 anchor_mode = 0
+limit_left = 0
+limit_right = 1600
 position_smoothing_enabled = true
 
 [node name="Right" type="Area2D" parent="Gui/Camera"]
@@ -94,9 +97,9 @@ shape = ExtResource("8_h7u7t")
 position = Vector2(838.75, 324)
 shape = ExtResource("9_j2pqs")
 
-[node name="Right3" type="Area2D" parent="Gui/Camera"]
+[node name="CameraAtivation" type="Area2D" parent="Gui/Camera"]
 
-[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Right3"]
+[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/CameraAtivation"]
 position = Vector2(701.75, 324)
 shape = ExtResource("10_2ilg3")
 
@@ -111,9 +114,3 @@ shape = ExtResource("8_h7u7t")
 [node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Left2"]
 position = Vector2(311.75, 324)
 shape = ExtResource("9_j2pqs")
-
-[node name="Left3" type="Area2D" parent="Gui/Camera"]
-
-[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Left3"]
-position = Vector2(448.75, 324)
-shape = ExtResource("10_2ilg3")
