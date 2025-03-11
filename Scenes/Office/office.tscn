@@ -1,0 +1,119 @@
+[gd_scene load_steps=16 format=3 uid="uid://rrxva8uhuc2y"]
+
+[ext_resource type="Texture2D" uid="uid://b8u6g2ufsavuf" path="res://Assets/3-THE_OFFICE/1-OFFICE.png" id="1_q58a0"]
+[ext_resource type="Texture2D" uid="uid://cr84kdr6y48c4" path="res://Assets/3-THE_OFFICE/1-OFFICE_BONNIE.png" id="2_hoad8"]
+[ext_resource type="Texture2D" uid="uid://xvghyw5duul" path="res://Assets/3-THE_OFFICE/1-OFFICE_CHICA.png" id="3_dd2rk"]
+[ext_resource type="Texture2D" uid="uid://dgtykhsflrblj" path="res://Assets/3-THE_OFFICE/1-OFFICE_TV_ON.png" id="4_boyou"]
+[ext_resource type="Texture2D" uid="uid://dynj4whrmif2w" path="res://Assets/3-THE_OFFICE/LEFT_LIGHT.png" id="5_a2sxv"]
+[ext_resource type="Texture2D" uid="uid://cq0rvyfrrncb4" path="res://Assets/3-THE_OFFICE/RIGHT_LIGHT.png" id="6_i85do"]
+[ext_resource type="Script" uid="uid://di2pywpugv5nv" path="res://Scripts/camera.gd" id="7_ao0nd"]
+[ext_resource type="Texture2D" uid="uid://bc35h7icvwogb" path="res://Assets/3-THE_OFFICE/FAN/1.png" id="7_boyou"]
+[ext_resource type="Texture2D" uid="uid://jvt32ei0pyks" path="res://Assets/3-THE_OFFICE/FAN/2.png" id="8_a2sxv"]
+[ext_resource type="Shape2D" uid="uid://bcof2ridskg5l" path="res://Scenes/Office/Camera Collision/collision.tres" id="8_h7u7t"]
+[ext_resource type="Texture2D" uid="uid://dmdjbqew25kba" path="res://Assets/3-THE_OFFICE/FAN/3.png" id="9_i85do"]
+[ext_resource type="Shape2D" uid="uid://bned4hdruxj5y" path="res://Scenes/Office/Camera Collision/collision2.tres" id="9_j2pqs"]
+[ext_resource type="Shape2D" uid="uid://d2mkxb2i3cfr0" path="res://Scenes/Office/Camera Collision/collision3.tres" id="10_2ilg3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v47wj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q58a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hoad8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dd2rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_boyou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a2sxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i85do")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ao0nd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_boyou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a2sxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i85do")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Office" type="Node2D"]
+
+[node name="Office" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1.14441e-05)
+scale = Vector2(1, 0.9)
+sprite_frames = SubResource("SpriteFrames_v47wj")
+centered = false
+
+[node name="Fan" type="AnimatedSprite2D" parent="Office"]
+position = Vector2(780, 303)
+sprite_frames = SubResource("SpriteFrames_ao0nd")
+autoplay = "default"
+frame_progress = 0.507174
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Gui" type="CanvasLayer" parent="."]
+
+[node name="Camera" type="Node2D" parent="Gui"]
+script = ExtResource("7_ao0nd")
+
+[node name="CamPan" type="Camera2D" parent="Gui/Camera"]
+anchor_mode = 0
+position_smoothing_enabled = true
+
+[node name="Right" type="Area2D" parent="Gui/Camera"]
+
+[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Right"]
+position = Vector2(1040.25, 324)
+shape = ExtResource("8_h7u7t")
+
+[node name="Right2" type="Area2D" parent="Gui/Camera"]
+
+[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Right2"]
+position = Vector2(838.75, 324)
+shape = ExtResource("9_j2pqs")
+
+[node name="Right3" type="Area2D" parent="Gui/Camera"]
+
+[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Right3"]
+position = Vector2(701.75, 324)
+shape = ExtResource("10_2ilg3")
+
+[node name="Left" type="Area2D" parent="Gui/Camera"]
+
+[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Left"]
+position = Vector2(110, 324)
+shape = ExtResource("8_h7u7t")
+
+[node name="Left2" type="Area2D" parent="Gui/Camera"]
+
+[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Left2"]
+position = Vector2(311.75, 324)
+shape = ExtResource("9_j2pqs")
+
+[node name="Left3" type="Area2D" parent="Gui/Camera"]
+
+[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Left3"]
+position = Vector2(448.75, 324)
+shape = ExtResource("10_2ilg3")
