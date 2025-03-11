@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://rrxva8uhuc2y"]
+[gd_scene load_steps=73 format=3 uid="uid://rrxva8uhuc2y"]
 
 [ext_resource type="Texture2D" uid="uid://b8u6g2ufsavuf" path="res://Assets/3-THE_OFFICE/1-OFFICE.png" id="1_q58a0"]
 [ext_resource type="Texture2D" uid="uid://cr84kdr6y48c4" path="res://Assets/3-THE_OFFICE/1-OFFICE_BONNIE.png" id="2_hoad8"]
@@ -9,10 +9,60 @@
 [ext_resource type="Script" uid="uid://di2pywpugv5nv" path="res://Scripts/camera.gd" id="7_ao0nd"]
 [ext_resource type="Texture2D" uid="uid://bc35h7icvwogb" path="res://Assets/3-THE_OFFICE/FAN/1.png" id="7_boyou"]
 [ext_resource type="Texture2D" uid="uid://jvt32ei0pyks" path="res://Assets/3-THE_OFFICE/FAN/2.png" id="8_a2sxv"]
-[ext_resource type="Shape2D" uid="uid://bcof2ridskg5l" path="res://Scenes/Office/Camera Collision/collision.tres" id="8_h7u7t"]
 [ext_resource type="Texture2D" uid="uid://dmdjbqew25kba" path="res://Assets/3-THE_OFFICE/FAN/3.png" id="9_i85do"]
-[ext_resource type="Shape2D" uid="uid://bned4hdruxj5y" path="res://Scenes/Office/Camera Collision/collision2.tres" id="9_j2pqs"]
-[ext_resource type="Shape2D" uid="uid://d2mkxb2i3cfr0" path="res://Scenes/Office/Camera Collision/collision3.tres" id="10_2ilg3"]
+[ext_resource type="Script" uid="uid://b03bon3xj6vpa" path="res://Scripts/doors.gd" id="10_6r5g6"]
+[ext_resource type="Texture2D" uid="uid://i6snkyr8vsap" path="res://Assets/3-THE_OFFICE/DOORS/STOPPED/103.png" id="10_jsacg"]
+[ext_resource type="Texture2D" uid="uid://crk6bvicomgbq" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/1.png" id="11_6r5g6"]
+[ext_resource type="Shader" uid="uid://bexmqpcys0hvv" path="res://Shaders/perspective.gdshader" id="11_hoad8"]
+[ext_resource type="Texture2D" uid="uid://og4b1yxpxcv1" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/2.png" id="12_ipwyb"]
+[ext_resource type="Texture2D" uid="uid://b3ff0iibqym2t" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/3.png" id="13_b8a7v"]
+[ext_resource type="Texture2D" uid="uid://dddaey22brqaj" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/4.png" id="14_66itj"]
+[ext_resource type="Texture2D" uid="uid://5nj7xebk4s0l" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/5.png" id="15_uao8g"]
+[ext_resource type="Texture2D" uid="uid://kgb15viiib8j" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/6.png" id="16_mcrp1"]
+[ext_resource type="Texture2D" uid="uid://cgbftfgg7c2vu" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/7.png" id="17_m8x3r"]
+[ext_resource type="Texture2D" uid="uid://cbif77prr8w3h" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/8.png" id="18_vioia"]
+[ext_resource type="Texture2D" uid="uid://cvk030bbdgah6" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/9.png" id="19_kerf2"]
+[ext_resource type="Texture2D" uid="uid://cwyk3ingqxoxa" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/10.png" id="20_hau2h"]
+[ext_resource type="Texture2D" uid="uid://57012vh0d2lh" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/11.png" id="21_deq7i"]
+[ext_resource type="Texture2D" uid="uid://bwvcvbru6cm5d" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/12.png" id="22_ajqy6"]
+[ext_resource type="Texture2D" uid="uid://ci7f1hmtipyj3" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/13.png" id="23_60o0a"]
+[ext_resource type="Texture2D" uid="uid://cr2i5jbwprvb5" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/14.png" id="24_rgql7"]
+[ext_resource type="Texture2D" uid="uid://bqh42858pi2i3" path="res://Assets/3-THE_OFFICE/DOORS/STOPPED/104.png" id="25_8c5kn"]
+[ext_resource type="Texture2D" uid="uid://b24we7eo43yqp" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/1.png" id="26_cxt8k"]
+[ext_resource type="Texture2D" uid="uid://juyh0at448ep" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/2.png" id="27_fc4qe"]
+[ext_resource type="Texture2D" uid="uid://bvtt0dw77x3l" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/3.png" id="28_5hgru"]
+[ext_resource type="Texture2D" uid="uid://31ygqxu2mrha" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/4.png" id="29_4lkvs"]
+[ext_resource type="Texture2D" uid="uid://csbo1j3386jml" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/5.png" id="30_p2m1v"]
+[ext_resource type="Texture2D" uid="uid://ch02tpunpd51s" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/6.png" id="31_6flge"]
+[ext_resource type="Texture2D" uid="uid://bjr0djo0h0nih" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/7.png" id="32_mhrsx"]
+[ext_resource type="Texture2D" uid="uid://dyf0skpufc2l1" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/8.png" id="33_wr8wn"]
+[ext_resource type="Texture2D" uid="uid://xxsr1wabjvfn" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/9.png" id="34_lg0tp"]
+[ext_resource type="Texture2D" uid="uid://c5yb0di4xaqlo" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/10.png" id="35_7e3og"]
+[ext_resource type="Texture2D" uid="uid://ctiinidqs2ssi" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/11.png" id="36_bk8kl"]
+[ext_resource type="Texture2D" uid="uid://cv8vu3mc5rn86" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/12.png" id="37_x2owv"]
+[ext_resource type="Texture2D" uid="uid://bax4sb74vqurh" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/13.png" id="38_aeyte"]
+[ext_resource type="Texture2D" uid="uid://bgv4e6lq3yj72" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/14.png" id="39_0cya0"]
+[ext_resource type="Texture2D" uid="uid://up8yripkug5s" path="res://Assets/3-THE_OFFICE/DOORS/BUTTONS/LEFT/4-BOTH.png" id="40_c67do"]
+[ext_resource type="Texture2D" uid="uid://ctkpecjet0e7y" path="res://Assets/3-THE_OFFICE/DOORS/BUTTONS/LEFT/1-STOPPED.png" id="41_mni4t"]
+[ext_resource type="Texture2D" uid="uid://dmak4rb4p6uym" path="res://Assets/3-THE_OFFICE/DOORS/BUTTONS/LEFT/2-DOOR.png" id="42_lp63k"]
+[ext_resource type="Texture2D" uid="uid://cw64dvoe1cuh" path="res://Assets/3-THE_OFFICE/DOORS/BUTTONS/LEFT/3-LIGHT.png" id="43_nory5"]
+[ext_resource type="Texture2D" uid="uid://n8a8nptic1bq" path="res://Assets/3-THE_OFFICE/DOORS/BUTTONS/RIGHT/4-BOTH.png" id="44_pq3l4"]
+[ext_resource type="Texture2D" uid="uid://b0focimjvme7f" path="res://Assets/3-THE_OFFICE/DOORS/BUTTONS/RIGHT/1-STOPPED.png" id="45_jq0gy"]
+[ext_resource type="Texture2D" uid="uid://8nanp7o8aepu" path="res://Assets/3-THE_OFFICE/DOORS/BUTTONS/RIGHT/2-DOOR.png" id="46_88rt3"]
+[ext_resource type="Texture2D" uid="uid://ovxxmw1i2tw3" path="res://Assets/3-THE_OFFICE/DOORS/BUTTONS/RIGHT/3-LIGHT.png" id="47_getm1"]
+[ext_resource type="Script" uid="uid://doh1rxxm3q28c" path="res://Scripts/monitor.gd" id="50_i3yrp"]
+[ext_resource type="Texture2D" uid="uid://ccpy7fswaehhc" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/1.png" id="51_gc330"]
+[ext_resource type="Texture2D" uid="uid://hvc3ynaqgpee" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/2.png" id="52_2rp6l"]
+[ext_resource type="Texture2D" uid="uid://bgpucyth4i5ep" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/3.png" id="53_udbe8"]
+[ext_resource type="Texture2D" uid="uid://cy3hearda560q" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/4.png" id="54_r8qmn"]
+[ext_resource type="Texture2D" uid="uid://dfmlnshu2ab33" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/5.png" id="55_204id"]
+[ext_resource type="Texture2D" uid="uid://dofnv1vse1lld" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/6.png" id="56_hbeyh"]
+[ext_resource type="Texture2D" uid="uid://c1gc8pyurqpyg" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/7.png" id="57_45s6q"]
+[ext_resource type="Texture2D" uid="uid://bwuuhkbd1nrkr" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/8.png" id="58_tvbab"]
+[ext_resource type="Texture2D" uid="uid://vontuwveyarl" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/9.png" id="59_5jo73"]
+[ext_resource type="Texture2D" uid="uid://fe7186qs3n8p" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/10.png" id="60_awisd"]
+[ext_resource type="Texture2D" uid="uid://csjebceixg0pe" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/11.png" id="61_rxtxb"]
+[ext_resource type="Texture2D" uid="uid://dyuokdugdot6t" path="res://Assets/6-CAMERAS/0-FLIP.png" id="62_ex0hv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v47wj"]
 animations = [{
@@ -54,63 +104,334 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 30.0
+"speed": 120.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mv6av"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jsacg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6r5g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ipwyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b8a7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_66itj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_uao8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mcrp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_m8x3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vioia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kerf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hau2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_deq7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ajqy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_60o0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_rgql7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 120.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b156b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_8c5kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_cxt8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fc4qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5hgru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_4lkvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_p2m1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6flge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_mhrsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_wr8wn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_lg0tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_7e3og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_bk8kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_x2owv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_aeyte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_0cya0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 120.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kywp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_c67do")
+}],
+"loop": true,
+"name": &"both",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_mni4t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_lp63k")
+}],
+"loop": true,
+"name": &"door",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_nory5")
+}],
+"loop": true,
+"name": &"light",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tejqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_pq3l4")
+}],
+"loop": true,
+"name": &"both",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_jq0gy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_88rt3")
+}],
+"loop": true,
+"name": &"door",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_getm1")
+}],
+"loop": true,
+"name": &"light",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dd2rk"]
+shader = ExtResource("11_hoad8")
+shader_parameter/zoom = 75
+shader_parameter/smoothed = true
+shader_parameter/vertical = false
+shader_parameter/noWrap = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xu2dr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_gc330")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_2rp6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_udbe8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_r8qmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_204id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_hbeyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_45s6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_tvbab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_5jo73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_awisd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_rxtxb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23m3n"]
+size = Vector2(597, 62)
 
 [node name="Office" type="Node2D"]
 
 [node name="Office" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.14441e-05)
-scale = Vector2(1, 0.9)
 sprite_frames = SubResource("SpriteFrames_v47wj")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Fan" type="AnimatedSprite2D" parent="Office"]
 position = Vector2(780, 303)
 sprite_frames = SubResource("SpriteFrames_ao0nd")
 autoplay = "default"
-frame_progress = 0.507174
+frame_progress = 0.44856
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Gui" type="CanvasLayer" parent="."]
+[node name="Doors" type="Node2D" parent="Office"]
+script = ExtResource("10_6r5g6")
 
-[node name="Camera" type="Node2D" parent="Gui"]
-script = ExtResource("7_ao0nd")
+[node name="Left Door" type="AnimatedSprite2D" parent="Office/Doors"]
+position = Vector2(71, 0)
+sprite_frames = SubResource("SpriteFrames_mv6av")
+centered = false
+metadata/_edit_lock_ = true
 
-[node name="CamPan" type="Camera2D" parent="Gui/Camera"]
-position = Vector2(312, 0)
+[node name="Right Door" type="AnimatedSprite2D" parent="Office/Doors"]
+position = Vector2(1271, 0.999989)
+sprite_frames = SubResource("SpriteFrames_b156b")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Left Buttons" type="AnimatedSprite2D" parent="Office/Doors"]
+position = Vector2(-9, 266)
+sprite_frames = SubResource("SpriteFrames_7kywp")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="Office/Doors/Left Buttons"]
+offset_left = 30.0
+offset_top = 50.0
+offset_right = 69.0
+offset_bottom = 107.0
+flat = true
+
+[node name="Right Buttons" type="AnimatedSprite2D" parent="Office/Doors"]
+position = Vector2(1508, 266)
+sprite_frames = SubResource("SpriteFrames_tejqx")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="Office/Doors/Right Buttons"]
+offset_left = 23.0
+offset_top = 52.0
+offset_right = 62.0
+offset_bottom = 108.0
+flat = true
+
+[node name="Perspective" type="ColorRect" parent="Office"]
+material = SubResource("ShaderMaterial_dd2rk")
+offset_right = 1599.0
+offset_bottom = 720.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="CamPan" type="Camera2D" parent="."]
+position = Vector2(242, 0)
 anchor_mode = 0
 limit_left = 0
 limit_right = 1600
+limit_smoothed = true
 position_smoothing_enabled = true
+script = ExtResource("7_ao0nd")
 
-[node name="Right" type="Area2D" parent="Gui/Camera"]
+[node name="Gui" type="CanvasLayer" parent="."]
 
-[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Right"]
-position = Vector2(1040.25, 324)
-shape = ExtResource("8_h7u7t")
+[node name="Monitor" type="Node2D" parent="Gui"]
+script = ExtResource("50_i3yrp")
 
-[node name="Right2" type="Area2D" parent="Gui/Camera"]
+[node name="Monitor" type="AnimatedSprite2D" parent="Gui/Monitor"]
+sprite_frames = SubResource("SpriteFrames_xu2dr")
+centered = false
 
-[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Right2"]
-position = Vector2(838.75, 324)
-shape = ExtResource("9_j2pqs")
+[node name="Monitor Activation" type="Sprite2D" parent="Gui/Monitor"]
+position = Vector2(608, 680)
+texture = ExtResource("62_ex0hv")
+metadata/_edit_lock_ = true
 
-[node name="CameraAtivation" type="Area2D" parent="Gui/Camera"]
+[node name="Activation" type="Area2D" parent="Gui/Monitor/Monitor Activation"]
+position = Vector2(-608, -680)
 
-[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/CameraAtivation"]
-position = Vector2(701.75, 324)
-shape = ExtResource("10_2ilg3")
+[node name="Collision" type="CollisionShape2D" parent="Gui/Monitor/Monitor Activation/Activation"]
+position = Vector2(608, 688)
+shape = SubResource("RectangleShape2D_23m3n")
+metadata/_edit_lock_ = true
 
-[node name="Left" type="Area2D" parent="Gui/Camera"]
-
-[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Left"]
-position = Vector2(110, 324)
-shape = ExtResource("8_h7u7t")
-
-[node name="Left2" type="Area2D" parent="Gui/Camera"]
-
-[node name="Collision" type="CollisionShape2D" parent="Gui/Camera/Left2"]
-position = Vector2(311.75, 324)
-shape = ExtResource("9_j2pqs")
+[connection signal="pressed" from="Office/Doors/Left Buttons/Button" to="Office/Doors" method="_on_left_door_button_pressed"]
+[connection signal="pressed" from="Office/Doors/Right Buttons/Button" to="Office/Doors" method="_on_right_door_button_pressed"]
+[connection signal="mouse_entered" from="Gui/Monitor/Monitor Activation/Activation" to="Gui/Monitor" method="_on_activation_mouse_entered"]
