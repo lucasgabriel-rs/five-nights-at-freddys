@@ -349,7 +349,7 @@ metadata/_edit_lock_ = true
 position = Vector2(780, 303)
 sprite_frames = SubResource("SpriteFrames_ao0nd")
 autoplay = "default"
-frame_progress = 0.44856
+frame_progress = 0.967533
 centered = false
 metadata/_edit_lock_ = true
 
@@ -402,8 +402,7 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="CamPan" type="Camera2D" parent="."]
-position = Vector2(242, 0)
-anchor_mode = 0
+position = Vector2(805, 361)
 limit_left = 0
 limit_right = 1600
 limit_smoothed = true
