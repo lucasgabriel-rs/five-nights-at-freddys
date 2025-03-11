@@ -1,24 +1,21 @@
 extends Node2D
 
-var leftDoor: bool = false
-var rightDoor: bool = false
-
 func _on_left_door_button_pressed() -> void:
-	if leftDoor == false:
+	if Global.leftDoor == false:
 		$"Left Door".play()
 		$"Left Buttons".play("door")
-		leftDoor = true
+		Global.leftDoor = true
 	else:
 		$"Left Door".play_backwards()
 		$"Left Buttons".play("default")
-		leftDoor = false
+		Global.leftDoor = false
 
 func _on_right_door_button_pressed() -> void:
-	if rightDoor == false:
+	if Global.rightDoor == false:
 		$"Right Door".play()
 		$"Right Buttons".play("door")
-		rightDoor = true
+		Global.rightDoor = true
 	else:
 		$"Right Door".play_backwards()
 		$"Right Buttons".play("default")
-		rightDoor = false
+		Global.rightDoor = false
