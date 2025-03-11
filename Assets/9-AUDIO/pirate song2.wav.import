@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bm82d1t7requo"
+path="res://.godot/imported/pirate song2.wav-90fcc8579d85ba7cb5f794c7f76ed3ca.sample"
+
+[deps]
+
+source_file="res://Assets/9-AUDIO/pirate song2.wav"
+dest_files=["res://.godot/imported/pirate song2.wav-90fcc8579d85ba7cb5f794c7f76ed3ca.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
