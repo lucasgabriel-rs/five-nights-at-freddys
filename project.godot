@@ -13,7 +13,7 @@ config_version=5
 config/name="Five Night at Freddy's"
 config/version="1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://8cucttuou1at"
 
 [autoload]
 
@@ -23,8 +23,10 @@ Global="*res://Scripts/global.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/icon="res://icon.svg"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

@@ -1,10 +1,10 @@
-[gd_scene load_steps=73 format=3 uid="uid://rrxva8uhuc2y"]
+[gd_scene load_steps=75 format=3 uid="uid://rrxva8uhuc2y"]
 
 [ext_resource type="Texture2D" uid="uid://b8u6g2ufsavuf" path="res://Assets/3-THE_OFFICE/1-OFFICE.png" id="1_q58a0"]
 [ext_resource type="Texture2D" uid="uid://cr84kdr6y48c4" path="res://Assets/3-THE_OFFICE/1-OFFICE_BONNIE.png" id="2_hoad8"]
 [ext_resource type="Texture2D" uid="uid://xvghyw5duul" path="res://Assets/3-THE_OFFICE/1-OFFICE_CHICA.png" id="3_dd2rk"]
-[ext_resource type="Texture2D" uid="uid://dgtykhsflrblj" path="res://Assets/3-THE_OFFICE/1-OFFICE_TV_ON.png" id="4_boyou"]
 [ext_resource type="Texture2D" uid="uid://dynj4whrmif2w" path="res://Assets/3-THE_OFFICE/LEFT_LIGHT.png" id="5_a2sxv"]
+[ext_resource type="Script" uid="uid://ch8p25g7ydfi1" path="res://Scripts/office.gd" id="6_6r5g6"]
 [ext_resource type="Texture2D" uid="uid://cq0rvyfrrncb4" path="res://Assets/3-THE_OFFICE/RIGHT_LIGHT.png" id="6_i85do"]
 [ext_resource type="Script" uid="uid://di2pywpugv5nv" path="res://Scripts/camera.gd" id="7_ao0nd"]
 [ext_resource type="Texture2D" uid="uid://bc35h7icvwogb" path="res://Assets/3-THE_OFFICE/FAN/1.png" id="7_boyou"]
@@ -51,43 +51,58 @@
 [ext_resource type="Texture2D" uid="uid://8nanp7o8aepu" path="res://Assets/3-THE_OFFICE/DOORS/BUTTONS/RIGHT/2-DOOR.png" id="46_88rt3"]
 [ext_resource type="Texture2D" uid="uid://ovxxmw1i2tw3" path="res://Assets/3-THE_OFFICE/DOORS/BUTTONS/RIGHT/3-LIGHT.png" id="47_getm1"]
 [ext_resource type="Script" uid="uid://doh1rxxm3q28c" path="res://Scripts/monitor.gd" id="50_i3yrp"]
-[ext_resource type="Texture2D" uid="uid://ccpy7fswaehhc" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/1.png" id="51_gc330"]
-[ext_resource type="Texture2D" uid="uid://hvc3ynaqgpee" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/2.png" id="52_2rp6l"]
-[ext_resource type="Texture2D" uid="uid://bgpucyth4i5ep" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/3.png" id="53_udbe8"]
-[ext_resource type="Texture2D" uid="uid://cy3hearda560q" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/4.png" id="54_r8qmn"]
-[ext_resource type="Texture2D" uid="uid://dfmlnshu2ab33" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/5.png" id="55_204id"]
-[ext_resource type="Texture2D" uid="uid://dofnv1vse1lld" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/6.png" id="56_hbeyh"]
-[ext_resource type="Texture2D" uid="uid://c1gc8pyurqpyg" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/7.png" id="57_45s6q"]
-[ext_resource type="Texture2D" uid="uid://bwuuhkbd1nrkr" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/8.png" id="58_tvbab"]
-[ext_resource type="Texture2D" uid="uid://vontuwveyarl" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/9.png" id="59_5jo73"]
-[ext_resource type="Texture2D" uid="uid://fe7186qs3n8p" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/10.png" id="60_awisd"]
-[ext_resource type="Texture2D" uid="uid://csjebceixg0pe" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/11.png" id="61_rxtxb"]
-[ext_resource type="Texture2D" uid="uid://dyuokdugdot6t" path="res://Assets/6-CAMERAS/0-FLIP.png" id="62_ex0hv"]
+[ext_resource type="AudioStream" uid="uid://be6lrfomhxxgr" path="res://Assets/9-AUDIO/PartyFavorraspyPart_AC01__3.wav" id="50_ipwyb"]
+[ext_resource type="PackedScene" uid="uid://byhu7foa6fv5v" path="res://Scenes/Office/cameras.tscn" id="52_66itj"]
+[ext_resource type="Texture2D" uid="uid://cf464vrgq7p0k" path="res://Assets/6-CAMERAS/0-REC.png" id="53_m8x3r"]
+[ext_resource type="Script" uid="uid://clgk3o7s2ipwr" path="res://Scripts/cameras.gd" id="53_vioia"]
+[ext_resource type="Texture2D" uid="uid://yrtwimo28obs" path="res://Assets/6-CAMERAS/1-MAP.png" id="54_vioia"]
+[ext_resource type="Texture2D" uid="uid://cawqv31ct1drm" path="res://Assets/6-CAMERAS/1-MAP2.png" id="55_kerf2"]
+[ext_resource type="PackedScene" uid="uid://b3oko1ouusfgq" path="res://Scenes/Office/monitor.tscn" id="62_jsacg"]
+[ext_resource type="Script" uid="uid://d1hk5c8famsgs" path="res://Scripts/fps.gd" id="65_b8a7v"]
+[ext_resource type="Texture2D" uid="uid://iq5dxo7fvkrg" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM_BONNIE.png" id="117_8ouan"]
+[ext_resource type="Texture2D" uid="uid://b775x7gnq4hqc" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM.png" id="118_agqc2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v47wj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_q58a0")
-}, {
-"duration": 1.0,
 "texture": ExtResource("2_hoad8")
+}],
+"loop": true,
+"name": &"bonnie",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_dd2rk")
+}],
+"loop": true,
+"name": &"chica",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_boyou")
+"texture": ExtResource("1_q58a0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_a2sxv")
+}],
+"loop": true,
+"name": &"left light",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_i85do")
 }],
 "loop": true,
-"name": &"default",
-"speed": 1.0
+"name": &"right light",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ao0nd"]
@@ -290,59 +305,119 @@ shader_parameter/smoothed = true
 shader_parameter/vertical = false
 shader_parameter/noWrap = true
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xu2dr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ajqy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("117_8ouan")
+}],
+"loop": true,
+"name": &"bonnie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("118_agqc2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hau2h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_gc330")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_2rp6l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_udbe8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("54_r8qmn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("55_204id")
-}, {
-"duration": 1.0,
-"texture": ExtResource("56_hbeyh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("57_45s6q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("58_tvbab")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_5jo73")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_awisd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61_rxtxb")
+"texture": ExtResource("53_m8x3r")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
-"speed": 60.0
+"speed": 1.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_23m3n"]
-size = Vector2(597, 62)
+[sub_resource type="SpriteFrames" id="SpriteFrames_deq7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_vioia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_kerf2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Animation" id="Animation_deq7i"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gui/Cameras:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gui/Cameras:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_hau2h"]
+resource_name = "default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gui/Cameras:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -319, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gui/Cameras:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ajqy6"]
+_data = {
+&"RESET": SubResource("Animation_deq7i"),
+&"default": SubResource("Animation_hau2h")
+}
 
 [node name="Office" type="Node2D"]
 
 [node name="Office" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.14441e-05)
 sprite_frames = SubResource("SpriteFrames_v47wj")
+autoplay = "default"
 centered = false
+script = ExtResource("6_6r5g6")
 metadata/_edit_lock_ = true
 
 [node name="Fan" type="AnimatedSprite2D" parent="Office"]
@@ -355,6 +430,7 @@ metadata/_edit_lock_ = true
 
 [node name="Doors" type="Node2D" parent="Office"]
 script = ExtResource("10_6r5g6")
+metadata/_edit_lock_ = true
 
 [node name="Left Door" type="AnimatedSprite2D" parent="Office/Doors"]
 position = Vector2(71, 0)
@@ -374,14 +450,31 @@ sprite_frames = SubResource("SpriteFrames_7kywp")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="Office/Doors/Left Buttons"]
+[node name="Door" type="Button" parent="Office/Doors/Left Buttons"]
 anchors_preset = -1
-anchor_top = -1.082
-anchor_bottom = -1.082
-offset_left = 30.0
-offset_top = 317.254
-offset_right = 69.0
-offset_bottom = 374.254
+anchor_left = 0.337
+anchor_top = 0.211
+anchor_right = 0.761
+anchor_bottom = 0.441
+offset_left = -0.00400162
+offset_top = -0.117004
+offset_right = -0.012001
+offset_bottom = 0.072998
+focus_mode = 0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Light" type="Button" parent="Office/Doors/Left Buttons"]
+anchors_preset = -1
+anchor_left = 0.326
+anchor_top = 0.534
+anchor_right = 0.75
+anchor_bottom = 0.749
+offset_left = 0.00799942
+offset_top = 0.10199
+offset_bottom = -0.00300598
+focus_mode = 0
+mouse_default_cursor_shape = 2
 flat = true
 
 [node name="Right Buttons" type="AnimatedSprite2D" parent="Office/Doors"]
@@ -390,19 +483,50 @@ sprite_frames = SubResource("SpriteFrames_tejqx")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="Office/Doors/Right Buttons"]
-offset_left = 23.0
-offset_top = 52.0
-offset_right = 62.0
-offset_bottom = 108.0
+[node name="Door" type="Button" parent="Office/Doors/Right Buttons"]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.211
+anchor_right = 0.674
+anchor_bottom = 0.437
+offset_top = -0.117004
+offset_right = -0.00800323
+offset_bottom = 0.060997
+focus_mode = 0
+mouse_default_cursor_shape = 2
 flat = true
 
-[node name="Perspective" type="ColorRect" parent="Office"]
-material = SubResource("ShaderMaterial_dd2rk")
-offset_right = 1599.0
-offset_bottom = 720.0
-mouse_filter = 2
-metadata/_edit_lock_ = true
+[node name="Light" type="Button" parent="Office/Doors/Right Buttons"]
+anchors_preset = -1
+anchor_left = 0.261
+anchor_top = 0.538
+anchor_right = 0.674
+anchor_bottom = 0.753
+offset_left = -0.012001
+offset_top = 0.113983
+offset_right = -0.00800323
+offset_bottom = 0.00898743
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Freddy" type="Button" parent="Office"]
+anchors_preset = -1
+anchor_left = 0.421
+anchor_top = 0.324
+anchor_right = 0.427
+anchor_bottom = 0.337
+offset_left = -0.600037
+offset_top = -0.279999
+offset_right = 0.799988
+offset_bottom = 0.359985
+focus_mode = 0
+flat = true
+
+[node name="Noise" type="AudioStreamPlayer" parent="Office"]
+stream = ExtResource("50_ipwyb")
 
 [node name="CamPan" type="Camera2D" parent="."]
 position = Vector2(805, 361)
@@ -412,28 +536,170 @@ limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("7_ao0nd")
 
+[node name="Perspective" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_dd2rk")
+offset_right = 1600.0
+offset_bottom = 720.0
+mouse_filter = 2
+
 [node name="Gui" type="CanvasLayer" parent="."]
 
-[node name="Monitor" type="Node2D" parent="Gui"]
-script = ExtResource("50_i3yrp")
+[node name="Cameras" parent="Gui" instance=ExtResource("52_66itj")]
+visible = false
+z_index = 1
+script = ExtResource("53_vioia")
 
-[node name="Monitor" type="AnimatedSprite2D" parent="Gui/Monitor"]
-sprite_frames = SubResource("SpriteFrames_xu2dr")
+[node name="UI" type="CanvasLayer" parent="Gui/Cameras"]
+visible = false
+
+[node name="Supply Room" type="AnimatedSprite2D" parent="Gui/Cameras/UI"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ajqy6")
 centered = false
 
-[node name="Monitor Activation" type="Sprite2D" parent="Gui/Monitor"]
-position = Vector2(608, 680)
-texture = ExtResource("62_ex0hv")
-metadata/_edit_lock_ = true
+[node name="Perspective" type="ColorRect" parent="Gui/Cameras/UI"]
+material = SubResource("ShaderMaterial_dd2rk")
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
 
-[node name="Activation" type="Area2D" parent="Gui/Monitor/Monitor Activation"]
-position = Vector2(-608, -680)
+[node name="REC" type="AnimatedSprite2D" parent="Gui/Cameras/UI"]
+position = Vector2(56, 56)
+sprite_frames = SubResource("SpriteFrames_hau2h")
+autoplay = "default"
+centered = false
 
-[node name="Collision" type="CollisionShape2D" parent="Gui/Monitor/Monitor Activation/Activation"]
-position = Vector2(608, 688)
-shape = SubResource("RectangleShape2D_23m3n")
-metadata/_edit_lock_ = true
+[node name="Map" type="AnimatedSprite2D" parent="Gui/Cameras/UI"]
+position = Vector2(1048, 488)
+sprite_frames = SubResource("SpriteFrames_deq7i")
+autoplay = "default"
 
-[connection signal="pressed" from="Office/Doors/Left Buttons/Button" to="Office/Doors" method="_on_left_door_button_pressed"]
-[connection signal="pressed" from="Office/Doors/Right Buttons/Button" to="Office/Doors" method="_on_right_door_button_pressed"]
-[connection signal="mouse_entered" from="Gui/Monitor/Monitor Activation/Activation" to="Gui/Monitor" method="_on_activation_mouse_entered"]
+[node name="Buttons" type="Node2D" parent="Gui/Cameras/UI"]
+
+[node name="Cam 1A" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 975.0
+offset_top = 333.0
+offset_right = 1080.0
+offset_bottom = 365.0
+text = "CAM 1A"
+
+[node name="Cam 1B" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 910.0
+offset_top = 366.0
+offset_right = 1145.0
+offset_bottom = 505.0
+text = "CAM 1B"
+
+[node name="Cam 1C" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 873.0
+offset_top = 452.0
+offset_right = 908.0
+offset_bottom = 497.0
+theme_override_font_sizes/font_size = 12
+text = "CAM
+1C"
+
+[node name="Cam 2A" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 955.0
+offset_top = 518.0
+offset_right = 994.0
+offset_bottom = 591.0
+theme_override_font_sizes/font_size = 13
+text = "CAM
+2A"
+
+[node name="Cam 2B" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 955.0
+offset_top = 591.0
+offset_right = 994.0
+offset_bottom = 651.0
+theme_override_font_sizes/font_size = 13
+text = "CAM
+2B"
+
+[node name="Cam 3" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 905.0
+offset_top = 536.0
+offset_right = 941.0
+offset_bottom = 603.0
+theme_override_font_sizes/font_size = 12
+text = "CAM
+3"
+
+[node name="Cam 4A" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 1059.0
+offset_top = 518.0
+offset_right = 1098.0
+offset_bottom = 591.0
+theme_override_font_sizes/font_size = 13
+text = "CAM
+4A"
+
+[node name="Cam 4B" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 1059.0
+offset_top = 591.0
+offset_right = 1098.0
+offset_bottom = 651.0
+theme_override_font_sizes/font_size = 13
+text = "CAM
+4B"
+
+[node name="Cam 5" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 859.0
+offset_top = 366.0
+offset_right = 895.0
+offset_bottom = 434.0
+theme_override_font_sizes/font_size = 12
+text = "CAM
+5"
+
+[node name="Cam 6" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 1115.0
+offset_top = 519.0
+offset_right = 1195.0
+offset_bottom = 585.0
+text = "CAM 6"
+
+[node name="Cam 7" type="Button" parent="Gui/Cameras/UI/Buttons"]
+offset_left = 1160.0
+offset_top = 388.0
+offset_right = 1187.0
+offset_bottom = 503.0
+theme_override_font_sizes/font_size = 8
+text = "CAM
+7"
+
+[node name="Scrolling" type="AnimationPlayer" parent="Gui/Cameras"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ajqy6")
+}
+autoplay = "default"
+speed_scale = 0.5
+
+[node name="Monitor" parent="Gui" instance=ExtResource("62_jsacg")]
+script = ExtResource("50_i3yrp")
+
+[node name="FPS" type="Label" parent="Gui"]
+offset_right = 104.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 30
+text = "FPS: XX"
+script = ExtResource("65_b8a7v")
+
+[connection signal="pressed" from="Office/Doors/Left Buttons/Door" to="Office/Doors" method="_on_left_door_button_pressed"]
+[connection signal="pressed" from="Office/Doors/Left Buttons/Light" to="Office" method="_on_left_light_pressed"]
+[connection signal="pressed" from="Office/Doors/Right Buttons/Door" to="Office/Doors" method="_on_right_door_button_pressed"]
+[connection signal="pressed" from="Office/Doors/Right Buttons/Light" to="Office" method="_on_right_light_pressed"]
+[connection signal="pressed" from="Office/Freddy" to="Office" method="_on_noise_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 1A" to="Gui/Cameras" method="_on_cam_1a_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 1B" to="Gui/Cameras" method="_on_cam_1b_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 1C" to="Gui/Cameras" method="_on_cam_1c_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 2A" to="Gui/Cameras" method="_on_cam_2a_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 2B" to="Gui/Cameras" method="_on_cam_2b_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 3" to="Gui/Cameras" method="_on_cam_3_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 4A" to="Gui/Cameras" method="_on_cam_4a_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 4B" to="Gui/Cameras" method="_on_cam_4b_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 5" to="Gui/Cameras" method="_on_cam_5_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 6" to="Gui/Cameras" method="_on_cam_6_pressed"]
+[connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 7" to="Gui/Cameras" method="_on_cam_7_pressed"]
