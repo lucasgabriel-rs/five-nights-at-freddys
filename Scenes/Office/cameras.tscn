@@ -146,7 +146,7 @@ animations = [{
 "texture": ExtResource("8_vl1hb")
 }],
 "loop": true,
-"name": &"bonnie",
+"name": &"bonnie 1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -154,7 +154,7 @@ animations = [{
 "texture": ExtResource("9_8my7f")
 }],
 "loop": true,
-"name": &"bonnie 2 ",
+"name": &"bonnie 2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -162,7 +162,7 @@ animations = [{
 "texture": ExtResource("10_6ug3p")
 }],
 "loop": true,
-"name": &"chica",
+"name": &"chica 1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -436,7 +436,7 @@ animations = [{
 "texture": ExtResource("60_bmx2o")
 }],
 "loop": true,
-"name": &"chica",
+"name": &"chica 1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -587,26 +587,32 @@ animations = [{
 
 [node name="Stage" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eceyq")
+autoplay = "default"
 centered = false
 
 [node name="Dining Area" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_1d5sq")
+animation = &"bonnie 2"
+autoplay = "default"
 centered = false
 
 [node name="Pirate Cove" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_2l2nu")
+autoplay = "default"
 centered = false
 
 [node name="Restrooms" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_efpsg")
+autoplay = "default"
 centered = false
 
 [node name="Backstage" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_qsves")
+autoplay = "default"
 centered = false
 
 [node name="West Hall Corner" type="AnimatedSprite2D" parent="."]
@@ -619,17 +625,20 @@ centered = false
 [node name="East Hall Corner" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_s57mc")
+autoplay = "default"
 centered = false
 
 [node name="West Hall" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_5mp1a")
+autoplay = "default"
 frame_progress = 0.700339
 centered = false
 
 [node name="East Hall" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_n2jfs")
+autoplay = "default"
 frame_progress = 0.152155
 centered = false
 

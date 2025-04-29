@@ -415,6 +415,7 @@ _data = {
 [node name="Office" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.14441e-05)
 sprite_frames = SubResource("SpriteFrames_v47wj")
+animation = &"left light"
 autoplay = "default"
 centered = false
 script = ExtResource("6_6r5g6")
@@ -677,6 +678,10 @@ libraries = {
 autoplay = "default"
 speed_scale = 0.5
 
+[node name="Timer" type="Timer" parent="Gui/Cameras"]
+wait_time = 4.97
+autostart = true
+
 [node name="Monitor" parent="Gui" instance=ExtResource("62_jsacg")]
 script = ExtResource("50_i3yrp")
 
@@ -703,3 +708,4 @@ script = ExtResource("65_b8a7v")
 [connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 5" to="Gui/Cameras" method="_on_cam_5_pressed"]
 [connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 6" to="Gui/Cameras" method="_on_cam_6_pressed"]
 [connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 7" to="Gui/Cameras" method="_on_cam_7_pressed"]
+[connection signal="timeout" from="Gui/Cameras/Timer" to="Gui/Cameras" method="_on_timer_timeout"]
