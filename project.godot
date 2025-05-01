@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Five Night at Freddy's"
 config/version="1"
+run/main_scene="uid://rrxva8uhuc2y"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://8cucttuou1at"
 

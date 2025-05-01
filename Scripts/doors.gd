@@ -7,6 +7,7 @@ func _on_left_door_button_pressed() -> void:
 	else:
 		$"Left Door".play_backwards()
 		Global.leftDoor = false
+	$"door close".play()
 
 func _on_right_door_button_pressed() -> void:
 	if Global.rightDoor == false:
@@ -15,3 +16,4 @@ func _on_right_door_button_pressed() -> void:
 	else:
 		$"Right Door".play_backwards()
 		Global.rightDoor = false
+	$"door close".play()

@@ -587,13 +587,14 @@ animations = [{
 
 [node name="Stage" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eceyq")
+animation = &"freddy"
 autoplay = "default"
 centered = false
 
 [node name="Dining Area" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_1d5sq")
-animation = &"bonnie 2"
+animation = &"freddy"
 autoplay = "default"
 centered = false
 
@@ -625,6 +626,7 @@ centered = false
 [node name="East Hall Corner" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_s57mc")
+animation = &"chica 1"
 autoplay = "default"
 centered = false
 
@@ -638,8 +640,9 @@ centered = false
 [node name="East Hall" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_n2jfs")
+animation = &"chica"
 autoplay = "default"
-frame_progress = 0.152155
+frame_progress = 0.644509
 centered = false
 
 [node name="Kitchen" type="ColorRect" parent="."]

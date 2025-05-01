@@ -14,8 +14,8 @@ var cameras: Array = [
 ]
 @onready var supply_room: AnimatedSprite2D = $"UI/Supply Room"
 
-
 func _on_cam_1a_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = true
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -29,6 +29,7 @@ func _on_cam_1a_pressed() -> void:
 	cameras[9].visible = false
 
 func _on_cam_1b_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = false
 	cameras[1].visible = true
 	cameras[2].visible = false
@@ -42,6 +43,7 @@ func _on_cam_1b_pressed() -> void:
 	cameras[9].visible = false
 
 func _on_cam_1c_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = true
@@ -55,6 +57,7 @@ func _on_cam_1c_pressed() -> void:
 	cameras[9].visible = false
 
 func _on_cam_2a_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -68,6 +71,7 @@ func _on_cam_2a_pressed() -> void:
 	cameras[9].visible = false
 
 func _on_cam_2b_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -81,6 +85,7 @@ func _on_cam_2b_pressed() -> void:
 	cameras[9].visible = false
 
 func _on_cam_3_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -94,6 +99,7 @@ func _on_cam_3_pressed() -> void:
 	cameras[9].visible = false
 
 func _on_cam_4a_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -107,6 +113,7 @@ func _on_cam_4a_pressed() -> void:
 	cameras[9].visible = false
 
 func _on_cam_4b_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -120,6 +127,7 @@ func _on_cam_4b_pressed() -> void:
 	cameras[9].visible = false
 
 func _on_cam_5_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -133,6 +141,7 @@ func _on_cam_5_pressed() -> void:
 	cameras[9].visible = false
 
 func _on_cam_6_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -146,6 +155,7 @@ func _on_cam_6_pressed() -> void:
 	cameras[9].visible = true
 
 func _on_cam_7_pressed() -> void:
+	$"blip".play()
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -165,29 +175,80 @@ func _on_timer_timeout() -> void:
 func cameraUpdate(animatronic: String) -> void:
 	match animatronic:
 		"bonnie":
+			if Global.animatronics["bonnie"]["difficult"] > 0:
+				match Global.animatronicPos(animatronic):
+					"stage":
+						cameras[0].play("default")
+						cameras[1].play("default")
+						cameras[4].play("default")
+						cameras[5].play("default")
+					"dining area":
+						cameras[0].play("chica and freddy")
+						cameras[1].play(["bonnie 1", "bonnie 2"].pick_random())
+						cameras[4].play("default")
+						cameras[5].play("default")
+					"backstage":
+						cameras[0].play("chica and freddy")
+						cameras[1].play("default")
+						cameras[4].play(["bonnie 1", "bonnie 2"].pick_random())
+						cameras[5].play("default")
+					"west hall corner":
+						cameras[1].play("default")
+						cameras[5].play("bonnie")
+						supply_room.play("default")
+						cameras[7].play("default")
+					"supply room":
+						cameras[5].play("default")
+						supply_room.play("bonnie")
+						cameras[7].play("default")
+					"west hall":
+						cameras[5].play("default")
+						supply_room.play("default")
+						cameras[7].play("bonnie")
+					"door":
+						cameras[0].play("chica and freddy")
+						cameras[1].play("default")
+						cameras[5].play("default")
+						supply_room.play("default")
+						cameras[7].play("default")
+		"chica":
 			match Global.animatronicPos(animatronic):
-				"dining area":
-					cameras[0].play("chica and freddy")
-					cameras[1].play(["bonnie 1", "bonnie 2"].pick_random())
-					cameras[4].play("default")
-					cameras[5].play("default")
-				"backstage":
-					cameras[0].play("chica and freddy")
-					cameras[1].play("default")
-					cameras[4].play(["bonnie 1", "bonnie 2"].pick_random())
-					cameras[5].play("default")
-				"west hall corner":
-					cameras[1].play("default")
-					cameras[5].play("bonnie")
-					supply_room.play("default")
-					cameras[7].play("default")
-				"supply room":
-					cameras[5].play("default")
-					supply_room.play("bonnie")
-					cameras[7].play("default")
-				"west hall":
-					cameras[5].play("default")
-					supply_room.play("default")
-					cameras[7].play("bonnie")
-				"door":
+				"stage":
 					pass
+				"dining area":
+					cameras[0].play("bonnie and freddy")
+					cameras[1].play(["chica 1", "chica 2"].pick_random())
+					cameras[3].play("default")
+					cameras[6].play("default")
+					cameras[8].play("default")
+					print("bruh")
+				"restrooms":
+					cameras[0].play("bonnie and freddy")
+					cameras[1].play("default")
+					cameras[3].play(["chica 1", "chica 2"].pick_random())
+					cameras[6].play("default")
+					cameras[8].play("default")
+				"kitchen":
+					cameras[0].play("bonnie and freddy")
+					cameras[1].play("default")
+					cameras[3].play("default")
+					cameras[6].play("default")
+					cameras[8].play("default")
+				"east hall corner":
+					cameras[0].play("bonnie and freddy")
+					cameras[1].play("default")
+					cameras[3].play("default")
+					cameras[6].play(["chica 1", "chica 2"].pick_random())
+					cameras[8].play("default")
+				"east hall":
+					cameras[0].play("bonnie and freddy")
+					cameras[1].play("default")
+					cameras[3].play("default")
+					cameras[6].play("default")
+					cameras[8].play("chica")
+				"door":
+					cameras[0].play("bonnie and freddy") # Stage
+					cameras[1].play("default") # Dining Room
+					cameras[3].play("default") # Restroom
+					cameras[6].play("default") # East Hall Corner
+					cameras[8].play("default") # East Hall

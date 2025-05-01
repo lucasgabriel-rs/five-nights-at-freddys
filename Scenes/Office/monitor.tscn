@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3oko1ouusfgq"]
+[gd_scene load_steps=17 format=3 uid="uid://b3oko1ouusfgq"]
 
 [ext_resource type="Texture2D" uid="uid://ccpy7fswaehhc" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/1.png" id="1_ilk86"]
 [ext_resource type="Texture2D" uid="uid://hvc3ynaqgpee" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/2.png" id="2_0nlll"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://fe7186qs3n8p" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/10.png" id="10_80w3r"]
 [ext_resource type="Texture2D" uid="uid://csjebceixg0pe" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/11.png" id="11_2yvlq"]
 [ext_resource type="Texture2D" uid="uid://dyuokdugdot6t" path="res://Assets/6-CAMERAS/0-FLIP.png" id="12_mg4qw"]
+[ext_resource type="AudioStream" uid="uid://ruhvlqorah15" path="res://Assets/9-AUDIO/put down.wav" id="13_um4ta"]
+[ext_resource type="AudioStream" uid="uid://y6jvyvhymi0p" path="res://Assets/9-AUDIO/CAMERA_VIDEO_LOA_60105303.wav" id="14_2vhxi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6ikvh"]
 animations = [{
@@ -81,3 +83,9 @@ texture = ExtResource("12_mg4qw")
 [node name="Collision" type="CollisionShape2D" parent="Activation/Activation"]
 position = Vector2(608, 689)
 shape = SubResource("RectangleShape2D_0yaxq")
+
+[node name="putDown" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_um4ta")
+
+[node name="put" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_2vhxi")
