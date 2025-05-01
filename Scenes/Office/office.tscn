@@ -468,9 +468,7 @@ _data = {
 [node name="Office" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.14441e-05)
 sprite_frames = SubResource("SpriteFrames_v47wj")
-animation = &"bonnie"
 autoplay = "default"
-frame_progress = 0.83616
 centered = false
 script = ExtResource("6_6r5g6")
 metadata/_edit_lock_ = true
@@ -502,7 +500,7 @@ metadata/_edit_lock_ = true
 [node name="Left Buttons" type="AnimatedSprite2D" parent="Office/Doors"]
 position = Vector2(-9, 266)
 sprite_frames = SubResource("SpriteFrames_7kywp")
-animation = &"light"
+autoplay = "default"
 centered = false
 metadata/_edit_lock_ = true
 
@@ -536,7 +534,7 @@ flat = true
 [node name="Right Buttons" type="AnimatedSprite2D" parent="Office/Doors"]
 position = Vector2(1508, 266)
 sprite_frames = SubResource("SpriteFrames_tejqx")
-animation = &"light"
+autoplay = "default"
 centered = false
 metadata/_edit_lock_ = true
 
@@ -748,7 +746,7 @@ autoplay = "default"
 speed_scale = 0.5
 
 [node name="Timer" type="Timer" parent="Gui/Cameras"]
-wait_time = 4.97
+wait_time = 5.0
 autostart = true
 
 [node name="blip" type="AudioStreamPlayer" parent="Gui/Cameras"]
@@ -761,7 +759,12 @@ script = ExtResource("50_i3yrp")
 offset_right = 104.0
 offset_bottom = 42.0
 theme_override_font_sizes/font_size = 30
-text = "FPS: XX"
+text = "FPS: XX
+Bonnie Pos: X
+Chica Pos: X
+Freddy Pos: X
+Bonnie: X
+Timer"
 script = ExtResource("65_b8a7v")
 
 [connection signal="pressed" from="Office/Doors/Left Buttons/Door" to="Office/Doors" method="_on_left_door_button_pressed"]

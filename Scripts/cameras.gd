@@ -12,6 +12,7 @@ var cameras: Array = [
 	$"East Hall", # id 8
 	$Kitchen # id 9
 ]
+
 @onready var supply_room: AnimatedSprite2D = $"UI/Supply Room"
 
 func _on_cam_1a_pressed() -> void:
@@ -171,57 +172,47 @@ func _on_cam_7_pressed() -> void:
 func _on_timer_timeout() -> void:
 	Global.ai("bonnie")
 	cameraUpdate("bonnie")
+	Global.ai("chica")
+	cameraUpdate("chica")
 
 func cameraUpdate(animatronic: String) -> void:
 	match animatronic:
 		"bonnie":
-			if Global.animatronics["bonnie"]["difficult"] > 0:
-				match Global.animatronicPos(animatronic):
-					"stage":
-						cameras[0].play("default")
-						cameras[1].play("default")
-						cameras[4].play("default")
-						cameras[5].play("default")
-					"dining area":
-						cameras[0].play("chica and freddy")
-						cameras[1].play(["bonnie 1", "bonnie 2"].pick_random())
-						cameras[4].play("default")
-						cameras[5].play("default")
-					"backstage":
-						cameras[0].play("chica and freddy")
-						cameras[1].play("default")
-						cameras[4].play(["bonnie 1", "bonnie 2"].pick_random())
-						cameras[5].play("default")
-					"west hall corner":
-						cameras[1].play("default")
-						cameras[5].play("bonnie")
-						supply_room.play("default")
-						cameras[7].play("default")
-					"supply room":
-						cameras[5].play("default")
-						supply_room.play("bonnie")
-						cameras[7].play("default")
-					"west hall":
-						cameras[5].play("default")
-						supply_room.play("default")
-						cameras[7].play("bonnie")
-					"door":
-						cameras[0].play("chica and freddy")
-						cameras[1].play("default")
-						cameras[5].play("default")
-						supply_room.play("default")
-						cameras[7].play("default")
+			match Global.animatronicPos(animatronic):
+				"dining area":
+					cameras[0].play("chica and freddy")
+					cameras[1].play(["bonnie 1", "bonnie 2"].pick_random())
+					cameras[4].play("default")
+					cameras[5].play("default")
+				"backstage":
+					cameras[0].play("chica and freddy")
+					cameras[1].play("default")
+					cameras[4].play(["bonnie 1", "bonnie 2"].pick_random())
+					cameras[5].play("default")
+				"west hall corner":
+					cameras[1].play("default")
+					cameras[5].play("bonnie")
+					supply_room.play("default")
+					cameras[7].play("default")
+				"supply room":
+					cameras[5].play("default")
+					supply_room.play("bonnie")
+					cameras[7].play("default")
+				"west hall":
+					cameras[5].play("default")
+					supply_room.play("default")
+					cameras[7].play("bonnie")
+				"door":
+					cameras[5].play("default")
+					cameras[7].play("default")
 		"chica":
 			match Global.animatronicPos(animatronic):
-				"stage":
-					pass
 				"dining area":
 					cameras[0].play("bonnie and freddy")
 					cameras[1].play(["chica 1", "chica 2"].pick_random())
 					cameras[3].play("default")
 					cameras[6].play("default")
 					cameras[8].play("default")
-					print("bruh")
 				"restrooms":
 					cameras[0].play("bonnie and freddy")
 					cameras[1].play("default")
