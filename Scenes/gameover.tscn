@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://btfn7hopgei1c"]
+[gd_scene load_steps=8 format=3 uid="uid://720ntnxmeyrb"]
 
 [ext_resource type="Texture2D" uid="uid://bj088nbv345wa" path="res://Assets/3-THE_OFFICE/OTHER/GAME_OVER_.png" id="1_2oltb"]
 [ext_resource type="Script" uid="uid://dnoj7k1fhhuy7" path="res://Scripts/gameover.gd" id="1_6kwjr"]
 [ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="2_vnjje"]
-[ext_resource type="AudioStream" uid="uid://jje7i1w57tyi" path="res://Assets/9-AUDIO/static2.wav" id="3_6kwjr"]
+[ext_resource type="AudioStream" uid="uid://cxqb3uujdv8xw" path="res://Assets/9-AUDIO/ColdPresc B.wav" id="4_6kwjr"]
 [ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="4_vnjje"]
+[ext_resource type="AudioStream" uid="uid://bng8u2b8k23sd" path="res://Assets/9-AUDIO/blip3.wav" id="5_bb3cs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6kwjr"]
 shader = ExtResource("4_vnjje")
@@ -43,7 +44,7 @@ text = "Game Over"
 [node name="retry_button" type="Button" parent="."]
 offset_left = 585.0
 offset_top = 54.0
-offset_right = 676.0
+offset_right = 685.0
 offset_bottom = 104.0
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_vnjje")
@@ -71,9 +72,15 @@ rotation = 3.1565
 theme_override_font_sizes/font_size = 30
 text = "<<<"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_6kwjr")
+[node name="gameover_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6kwjr")
 autoplay = true
+
+[node name="entered_button_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bb3cs")
+
+[node name="pressed_button_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bb3cs")
 
 [node name="Static" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6kwjr")
