@@ -588,7 +588,6 @@ stream = ExtResource("50_ipwyb")
 
 [node name="scareTimer" type="Timer" parent="Office"]
 wait_time = 5.0
-one_shot = true
 
 [node name="lights sound" type="AudioStreamPlayer2D" parent="Office"]
 stream = ExtResource("62_ajqy6")
@@ -746,7 +745,7 @@ autoplay = "default"
 speed_scale = 0.5
 
 [node name="Timer" type="Timer" parent="Gui/Cameras"]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [node name="blip" type="AudioStreamPlayer" parent="Gui/Cameras"]
@@ -772,7 +771,6 @@ script = ExtResource("65_b8a7v")
 [connection signal="pressed" from="Office/Doors/Right Buttons/Door" to="Office/Doors" method="_on_right_door_button_pressed"]
 [connection signal="pressed" from="Office/Doors/Right Buttons/Light" to="Office" method="_on_right_light_pressed"]
 [connection signal="pressed" from="Office/Freddy" to="Office" method="_on_noise_pressed"]
-[connection signal="timeout" from="Office/scareTimer" to="Office" method="_on_scare_timer_timeout"]
 [connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 1A" to="Gui/Cameras" method="_on_cam_1a_pressed"]
 [connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 1B" to="Gui/Cameras" method="_on_cam_1b_pressed"]
 [connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 1C" to="Gui/Cameras" method="_on_cam_1c_pressed"]

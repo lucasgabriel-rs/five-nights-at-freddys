@@ -191,6 +191,7 @@ func cameraUpdate(animatronic: String) -> void:
 					cameras[5].play("default")
 				"west hall corner":
 					cameras[1].play("default")
+					cameras[4].play("default")
 					cameras[5].play("bonnie")
 					supply_room.play("default")
 					cameras[7].play("default")
