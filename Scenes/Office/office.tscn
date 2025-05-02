@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://rrxva8uhuc2y"]
+[gd_scene load_steps=92 format=3 uid="uid://rrxva8uhuc2y"]
 
 [ext_resource type="Texture2D" uid="uid://b8u6g2ufsavuf" path="res://Assets/3-THE_OFFICE/1-OFFICE.png" id="1_q58a0"]
 [ext_resource type="Texture2D" uid="uid://d0n1s1ovq05yk" path="res://Assets/3-THE_OFFICE/JUMPSCARES/2-BONNIE/1.png" id="2_hau2h"]
@@ -73,6 +73,7 @@
 [ext_resource type="PackedScene" uid="uid://b3oko1ouusfgq" path="res://Scenes/Office/monitor.tscn" id="62_jsacg"]
 [ext_resource type="AudioStream" uid="uid://dw0rvjgdk64gn" path="res://Assets/9-AUDIO/windowscare.wav" id="63_60o0a"]
 [ext_resource type="Script" uid="uid://d1hk5c8famsgs" path="res://Scripts/fps.gd" id="65_b8a7v"]
+[ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="70_8c5kn"]
 [ext_resource type="AudioStream" uid="uid://bng8u2b8k23sd" path="res://Assets/9-AUDIO/blip3.wav" id="73_rgql7"]
 [ext_resource type="Texture2D" uid="uid://iq5dxo7fvkrg" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM_BONNIE.png" id="117_8ouan"]
 [ext_resource type="Texture2D" uid="uid://b775x7gnq4hqc" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM.png" id="118_agqc2"]
@@ -377,6 +378,23 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cxt8k"]
+shader = ExtResource("70_8c5kn")
+shader_parameter/resolution = Vector2(256, 144)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.03
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_hau2h"]
 animations = [{
 "frames": [{
@@ -468,10 +486,7 @@ _data = {
 [node name="Office" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.14441e-05)
 sprite_frames = SubResource("SpriteFrames_v47wj")
-animation = &"bonnie_jumpscare"
 autoplay = "default"
-frame = 1
-frame_progress = 0.366047
 centered = false
 script = ExtResource("6_6r5g6")
 metadata/_edit_lock_ = true
@@ -632,6 +647,16 @@ material = SubResource("ShaderMaterial_dd2rk")
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
+
+[node name="Static" type="ColorRect" parent="Gui/Cameras/UI"]
+material = SubResource("ShaderMaterial_cxt8k")
+offset_left = -0.0303679
+offset_top = -0.0282512
+offset_right = 1279.97
+offset_bottom = 719.972
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="REC" type="AnimatedSprite2D" parent="Gui/Cameras/UI"]
 position = Vector2(56, 56)

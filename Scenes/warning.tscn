@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c244hnkcivvyj"]
 
-[ext_resource type="Script" path="res://Scripts/warning.gd" id="1_osvl0"]
+[ext_resource type="Script" uid="uid://cwnvt0vv68w42" path="res://Scripts/warning.gd" id="1_osvl0"]
 [ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="2_k7nv6"]
 [ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="3_hme1k"]
 
@@ -157,8 +157,11 @@ text = "WARNING:
 
 This game contains flashing lights and desorienting effects."
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Animation" type="AnimationPlayer" parent="Label"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_ynpur")
 }
@@ -170,4 +173,4 @@ layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Label/Animation" to="." method="_on_animation_player_animation_finished"]

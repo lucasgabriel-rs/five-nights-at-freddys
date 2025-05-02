@@ -15,6 +15,17 @@ var cameras: Array = [
 
 @onready var supply_room: AnimatedSprite2D = $"UI/Supply Room"
 
+func _process(delta: float) -> void:
+	if Global.animatronics["bonnie"]["isInStage"] == true and Global.animatronics["chica"]["isInStage"] == true and Global.animatronics["freddy"]["isInStage"] == true:
+		cameras[0].play("default")
+	elif Global.animatronics["bonnie"]["isInStage"] == false and Global.animatronics["chica"]["isInStage"] == true and Global.animatronics["freddy"]["isInStage"] == true:
+		cameras[0].play("chica and freddy")
+	elif Global.animatronics["bonnie"]["isInStage"] == true and Global.animatronics["chica"]["isInStage"] == false and Global.animatronics["freddy"]["isInStage"] == true:
+		cameras[0].play("bonnie and freddy")
+	elif Global.animatronics["bonnie"]["isInStage"] == false and Global.animatronics["chica"]["isInStage"] == false and Global.animatronics["freddy"]["isInStage"] == true:
+		cameras[0].play("freddy")
+	else: cameras[0].play("empty")
+
 func _on_cam_1a_pressed() -> void:
 	$"blip".play()
 	cameras[0].visible = true
@@ -180,12 +191,10 @@ func cameraUpdate(animatronic: String) -> void:
 		"bonnie":
 			match Global.animatronicPos(animatronic):
 				"dining area":
-					cameras[0].play("chica and freddy")
 					cameras[1].play(["bonnie 1", "bonnie 2"].pick_random())
 					cameras[4].play("default")
 					cameras[5].play("default")
 				"backstage":
-					cameras[0].play("chica and freddy")
 					cameras[1].play("default")
 					cameras[4].play(["bonnie 1", "bonnie 2"].pick_random())
 					cameras[5].play("default")
@@ -209,37 +218,31 @@ func cameraUpdate(animatronic: String) -> void:
 		"chica":
 			match Global.animatronicPos(animatronic):
 				"dining area":
-					cameras[0].play("bonnie and freddy")
 					cameras[1].play(["chica 1", "chica 2"].pick_random())
 					cameras[3].play("default")
 					cameras[6].play("default")
 					cameras[8].play("default")
 				"restrooms":
-					cameras[0].play("bonnie and freddy")
 					cameras[1].play("default")
 					cameras[3].play(["chica 1", "chica 2"].pick_random())
 					cameras[6].play("default")
 					cameras[8].play("default")
 				"kitchen":
-					cameras[0].play("bonnie and freddy")
 					cameras[1].play("default")
 					cameras[3].play("default")
 					cameras[6].play("default")
 					cameras[8].play("default")
 				"east hall corner":
-					cameras[0].play("bonnie and freddy")
 					cameras[1].play("default")
 					cameras[3].play("default")
 					cameras[6].play(["chica 1", "chica 2"].pick_random())
 					cameras[8].play("default")
 				"east hall":
-					cameras[0].play("bonnie and freddy")
 					cameras[1].play("default")
 					cameras[3].play("default")
 					cameras[6].play("default")
 					cameras[8].play("chica")
 				"door":
-					cameras[0].play("bonnie and freddy") # Stage
 					cameras[1].play("default") # Dining Room
 					cameras[3].play("default") # Restroom
 					cameras[6].play("default") # East Hall Corner

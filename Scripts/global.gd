@@ -22,7 +22,8 @@ var animatronics: Dictionary = {
 		0, # Night 6
 		0 # Night 7
 		],
-		"pos": "stage"
+		"pos": "stage",
+		"isInStage": true
 	},
 	"chica": {
 		"difficult": [20, # Night 1
@@ -33,7 +34,8 @@ var animatronics: Dictionary = {
 		0, # Night 6
 		0 # Night 7
 		],
-		"pos": "stage"
+		"pos": "stage",
+		"isInStage": true
 	},
 	"freddy": {
 		"difficult": [20, # Night 1
@@ -44,7 +46,8 @@ var animatronics: Dictionary = {
 		0, # Night 6
 		0 # Night 7
 		],
-		"pos": "stage"
+		"pos": "stage",
+		"isInStage": true
 	},
 	"foxy": {
 		"difficult": [20, # Night 1
@@ -55,7 +58,7 @@ var animatronics: Dictionary = {
 		0, # Night 6
 		0 # Night 7
 		],
-		"pos": "pirate cove"
+		"pos": "pirate cove",
 	}
 }
 
@@ -68,19 +71,31 @@ func ai(n: String) -> void:
 		match n:
 			"bonnie":
 				match animatronics["bonnie"]["pos"]:
-					"dining area": animatronics["bonnie"]["pos"] = ["west hall corner", "backstage"].pick_random()
-					"backstage": animatronics["bonnie"]["pos"] = ["west hall corner", "dining area"].pick_random()
-					"west hall corner": animatronics["bonnie"]["pos"] = ["west hall", "supply room", "dining area", "backstage"].pick_random()
+					"dining area":
+						animatronics["bonnie"]["isInStage"] = false
+						animatronics["bonnie"]["pos"] = ["west hall corner", "backstage"].pick_random()
+					"backstage":
+						animatronics["bonnie"]["isInStage"] = false
+						animatronics["bonnie"]["pos"] = ["west hall corner", "dining area"].pick_random()
+					"west hall corner":
+						animatronics["bonnie"]["pos"] = ["west hall", "supply room", "dining area", "backstage"].pick_random()
 					"supply room": animatronics["bonnie"]["pos"] = ["west hall", "west hall corner"].pick_random()
-					"west hall": animatronics["bonnie"]["pos"] = ["door", "supply room", "west hall corner"].pick_random()
+					"west hall":
+						animatronics["bonnie"]["pos"] = ["door", "supply room", "west hall corner"].pick_random()
 					"door": if leftDoor == true: animatronics["bonnie"]["pos"] = "dining area"
 					_: animatronics["bonnie"]["pos"] = ["dining area", "backstage"].pick_random()
 			"chica":
 				match animatronics["chica"]["pos"]:
-					"dining area": animatronics["chica"]["pos"] = ["east hall corner", "kitchen", "restroom"].pick_random()
-					"restroom": animatronics["chica"]["pos"] = ["east hall corner", "kitchen", "dining area"].pick_random()
-					"east hall corner": animatronics["chica"]["pos"] = ["east hall", "kitchen", "dining area", "restroom"].pick_random()
-					"kitchen": animatronics["chica"]["pos"] = ["east hall corner", "restroom", "dining area"].pick_random()
+					"dining area":
+						animatronics["chica"]["isInStage"] = false
+						animatronics["chica"]["pos"] = ["east hall corner", "kitchen", "restroom"].pick_random()
+					"restroom":
+						animatronics["chica"]["isInStage"] = false
+						animatronics["chica"]["pos"] = ["east hall corner", "kitchen", "dining area"].pick_random()
+					"east hall corner":
+						animatronics["chica"]["pos"] = ["east hall", "kitchen", "dining area", "restroom"].pick_random()
+					"kitchen":
+						animatronics["chica"]["pos"] = ["east hall corner", "restroom", "dining area"].pick_random()
 					"east hall": animatronics["chica"]["pos"] = ["door", "east hall corner"].pick_random()
 					"door": if rightDoor == true: animatronics["chica"]["pos"] = "dining area"
 					_: animatronics["chica"]["pos"] = ["dining area", "restroom"].pick_random()

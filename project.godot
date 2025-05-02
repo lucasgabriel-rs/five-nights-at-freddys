@@ -12,9 +12,8 @@ config_version=5
 
 config/name="Five Night at Freddy's"
 config/version="1"
-run/main_scene="uid://isex37jrqlxq"
+run/main_scene="uid://c244hnkcivvyj"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-boot_splash/bg_color=Color(0.158472, 0.158472, 0.158472, 1)
 config/icon="uid://8cucttuou1at"
 
 [autoload]
@@ -45,4 +44,3 @@ window/icon="res://icon.svg"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)

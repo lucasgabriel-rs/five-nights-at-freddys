@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://isex37jrqlxq"]
+[gd_scene load_steps=17 format=3 uid="uid://isex37jrqlxq"]
 
 [ext_resource type="Texture2D" uid="uid://1gokgffucx1g" path="res://Assets/2-MENU_TWITCHING/1.png" id="1_23t3j"]
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_wbdvm"]
+[ext_resource type="Script" uid="uid://6ptv5tc3syyl" path="res://Scripts/menu.gd" id="1_wbdvm"]
 [ext_resource type="Texture2D" uid="uid://debnwq8hxl7e3" path="res://Assets/2-MENU_TWITCHING/2.png" id="2_8ph6h"]
 [ext_resource type="Texture2D" uid="uid://b5y0kjka3cakx" path="res://Assets/2-MENU_TWITCHING/3.png" id="3_5ti5v"]
 [ext_resource type="Texture2D" uid="uid://dw5cktmmdi64m" path="res://Assets/2-MENU_TWITCHING/4.png" id="4_1by5w"]
@@ -24,10 +24,46 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_1by5w")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 60.0
+"speed": 24.0
 }]
+
+[sub_resource type="Animation" id="Animation_q3rjx"]
+resource_name = "Fade Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rfqti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8i7c"]
+_data = {
+&"Fade Out": SubResource("Animation_q3rjx"),
+&"RESET": SubResource("Animation_rfqti")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nakb8"]
 shader = ExtResource("13_ocger")
@@ -92,6 +128,10 @@ sprite_frames = SubResource("SpriteFrames_i37ye")
 centered = false
 metadata/_edit_lock_ = true
 
+[node name="Twitch" type="Timer" parent="Freddy"]
+wait_time = 0.05
+autostart = true
+
 [node name="Title" type="Label" parent="."]
 offset_left = 63.2296
 offset_top = 62.3366
@@ -127,12 +167,26 @@ text = "Load Game"
 flat = true
 
 [node name="Arrow" type="Label" parent="."]
-offset_left = 226.0
+offset_left = 227.0
 offset_top = 386.0
-offset_right = 277.0
+offset_right = 278.0
 offset_bottom = 428.0
 theme_override_font_sizes/font_size = 30
 text = "<<<"
+
+[node name="Fade" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="Fade Animation" type="AnimationPlayer" parent="Fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_g8i7c")
+}
+autoplay = "Fade Out"
 
 [node name="Static" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_nakb8")
@@ -149,13 +203,15 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(-0.0303679, -0.0282512)
 texture = ExtResource("8_q3rjx")
 centered = false
+metadata/_edit_lock_ = true
 
-[node name="Animation" type="AnimationPlayer" parent="Newspaper"]
+[node name="Newspaper Fade" type="AnimationPlayer" parent="Newspaper"]
 libraries = {
 &"": SubResource("AnimationLibrary_rfqti")
 }
 
+[connection signal="timeout" from="Freddy/Twitch" to="." method="_on_twitch_timeout"]
 [connection signal="mouse_entered" from="New Game" to="." method="_on_new_game_mouse_entered"]
 [connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]
 [connection signal="mouse_entered" from="Load Game" to="." method="_on_load_game_mouse_entered"]
-[connection signal="animation_finished" from="Newspaper/Animation" to="." method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="Newspaper/Newspaper Fade" to="." method="_on_newspaper_fade_animation_finished"]
