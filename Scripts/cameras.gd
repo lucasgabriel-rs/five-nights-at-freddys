@@ -15,7 +15,7 @@ var cameras: Array = [
 
 @onready var supply_room: AnimatedSprite2D = $"UI/Supply Room"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Global.animatronics["bonnie"]["isInStage"] == true and Global.animatronics["chica"]["isInStage"] == true and Global.animatronics["freddy"]["isInStage"] == true:
 		cameras[0].play("default")
 	elif Global.animatronics["bonnie"]["isInStage"] == false and Global.animatronics["chica"]["isInStage"] == true and Global.animatronics["freddy"]["isInStage"] == true:

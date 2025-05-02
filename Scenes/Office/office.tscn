@@ -782,6 +782,10 @@ stream = ExtResource("73_rgql7")
 [node name="Monitor" parent="Gui" instance=ExtResource("62_jsacg")]
 script = ExtResource("50_i3yrp")
 
+[node name="Cooldown" type="Timer" parent="Gui/Monitor"]
+wait_time = 0.2
+one_shot = true
+
 [node name="FPS" type="Label" parent="Gui"]
 offset_right = 104.0
 offset_bottom = 42.0
