@@ -123,7 +123,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"bonnie_jumpscare",
-"speed": 30.0
+"speed": 60.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -468,7 +468,10 @@ _data = {
 [node name="Office" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.14441e-05)
 sprite_frames = SubResource("SpriteFrames_v47wj")
+animation = &"bonnie_jumpscare"
 autoplay = "default"
+frame = 1
+frame_progress = 0.366047
 centered = false
 script = ExtResource("6_6r5g6")
 metadata/_edit_lock_ = true
