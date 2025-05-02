@@ -1,5 +1,6 @@
-[gd_scene load_steps=90 format=3 uid="uid://rrxva8uhuc2y"]
+[gd_scene load_steps=92 format=3 uid="uid://rrxva8uhuc2y"]
 
+[ext_resource type="Script" uid="uid://c8dl7rkirc121" path="res://Scenes/Office/office.gd" id="1_cxt8k"]
 [ext_resource type="Texture2D" uid="uid://b8u6g2ufsavuf" path="res://Assets/3-THE_OFFICE/1-OFFICE.png" id="1_q58a0"]
 [ext_resource type="Texture2D" uid="uid://d0n1s1ovq05yk" path="res://Assets/3-THE_OFFICE/JUMPSCARES/2-BONNIE/1.png" id="2_hau2h"]
 [ext_resource type="Texture2D" uid="uid://cr84kdr6y48c4" path="res://Assets/3-THE_OFFICE/1-OFFICE_BONNIE.png" id="2_hoad8"]
@@ -72,6 +73,7 @@
 [ext_resource type="AudioStream" uid="uid://3pxfpx4b3sdn" path="res://Assets/9-AUDIO/BallastHumMedium2.wav" id="62_ajqy6"]
 [ext_resource type="PackedScene" uid="uid://b3oko1ouusfgq" path="res://Scenes/Office/monitor.tscn" id="62_jsacg"]
 [ext_resource type="AudioStream" uid="uid://dw0rvjgdk64gn" path="res://Assets/9-AUDIO/windowscare.wav" id="63_60o0a"]
+[ext_resource type="AudioStream" uid="uid://d2jgtf5xs7hug" path="res://Assets/9-AUDIO/error.wav" id="64_8c5kn"]
 [ext_resource type="Script" uid="uid://d1hk5c8famsgs" path="res://Scripts/fps.gd" id="65_b8a7v"]
 [ext_resource type="AudioStream" uid="uid://bng8u2b8k23sd" path="res://Assets/9-AUDIO/blip3.wav" id="73_rgql7"]
 [ext_resource type="Texture2D" uid="uid://iq5dxo7fvkrg" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM_BONNIE.png" id="117_8ouan"]
@@ -120,10 +122,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("12_p2m1v")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
-"name": &"bonnie_jumpscare",
-"speed": 30.0
+"name": &"bonnie scare",
+"speed": 60.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -464,11 +469,15 @@ _data = {
 }
 
 [node name="Office" type="Node2D"]
+script = ExtResource("1_cxt8k")
 
 [node name="Office" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.14441e-05)
 sprite_frames = SubResource("SpriteFrames_v47wj")
+animation = &"bonnie scare"
 autoplay = "default"
+frame = 4
+frame_progress = 0.189679
 centered = false
 script = ExtResource("6_6r5g6")
 metadata/_edit_lock_ = true
@@ -570,6 +579,9 @@ flat = true
 [node name="door close" type="AudioStreamPlayer2D" parent="Office/Doors"]
 stream = ExtResource("60_deq7i")
 
+[node name="broke2" type="AudioStreamPlayer" parent="Office/Doors"]
+stream = ExtResource("64_8c5kn")
+
 [node name="Freddy" type="Button" parent="Office"]
 anchors_preset = -1
 anchor_left = 0.421
@@ -594,6 +606,9 @@ stream = ExtResource("62_ajqy6")
 
 [node name="window scare" type="AudioStreamPlayer2D" parent="Office"]
 stream = ExtResource("63_60o0a")
+
+[node name="broke" type="AudioStreamPlayer" parent="Office"]
+stream = ExtResource("64_8c5kn")
 
 [node name="CamPan" type="Camera2D" parent="."]
 position = Vector2(805, 361)
@@ -766,6 +781,7 @@ Bonnie: X
 Timer"
 script = ExtResource("65_b8a7v")
 
+[connection signal="animation_finished" from="Office" to="Office" method="_on_animation_finished"]
 [connection signal="pressed" from="Office/Doors/Left Buttons/Door" to="Office/Doors" method="_on_left_door_button_pressed"]
 [connection signal="pressed" from="Office/Doors/Left Buttons/Light" to="Office" method="_on_left_light_pressed"]
 [connection signal="pressed" from="Office/Doors/Right Buttons/Door" to="Office/Doors" method="_on_right_door_button_pressed"]

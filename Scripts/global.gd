@@ -9,8 +9,11 @@ var rightDoor: bool
 
 # Jumpscare
 var jumpscare = false
-var onDoor = false
-
+var brokeLeft = false
+var brokeRight = false
+var cameraUp = false
+var scarenow = false
+var gameOver = false
 # Animatronics
 var animatronics: Dictionary = {
 	"bonnie": {
@@ -22,7 +25,7 @@ var animatronics: Dictionary = {
 		0, # Night 6
 		0 # Night 7
 		],
-		"pos": "stage"
+		"pos": "door"
 	},
 	"chica": {
 		"difficult": [20, # Night 1
@@ -59,11 +62,18 @@ var animatronics: Dictionary = {
 	}
 }
 
+func _process(delta: float) -> void:
+	if scarenow == false and gameOver == false:
+		if brokeLeft == true:
+			if cameraUp:
+				jumpscare = true
+			if jumpscare == true and !cameraUp:
+				scarenow = true
+
 func animatronicPos(x: String):
 	return animatronics[x]["pos"]
 
 func ai(n: String) -> void:
-	#randomize()
 	if animatronics[n]["difficult"][night] >= randi_range(1, 20):
 		match n:
 			"bonnie":
@@ -73,7 +83,13 @@ func ai(n: String) -> void:
 					"west hall corner": animatronics["bonnie"]["pos"] = ["west hall", "supply room", "dining area", "backstage"].pick_random()
 					"supply room": animatronics["bonnie"]["pos"] = ["west hall", "west hall corner"].pick_random()
 					"west hall": animatronics["bonnie"]["pos"] = ["door", "supply room", "west hall corner"].pick_random()
-					"door": if leftDoor == true: animatronics["bonnie"]["pos"] = "dining area"
+					"door": 
+						if leftDoor == true: 
+							animatronics["bonnie"]["pos"] = "dining area"
+							brokeLeft = false
+						else:
+							if gameOver == false:
+								brokeLeft = true
 					_: animatronics["bonnie"]["pos"] = ["dining area", "backstage"].pick_random()
 			"chica":
 				match animatronics["chica"]["pos"]:
