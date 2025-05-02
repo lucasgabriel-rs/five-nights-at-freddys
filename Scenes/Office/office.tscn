@@ -621,13 +621,17 @@ limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("7_ao0nd")
 
-[node name="Perspective" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_dd2rk")
-offset_right = 1600.0
-offset_bottom = 720.0
-mouse_filter = 2
-
 [node name="Gui" type="CanvasLayer" parent="."]
+
+[node name="Perspective" type="ColorRect" parent="Gui"]
+material = SubResource("ShaderMaterial_dd2rk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="Cameras" parent="Gui" instance=ExtResource("52_66itj")]
 visible = false
@@ -644,16 +648,22 @@ centered = false
 
 [node name="Perspective" type="ColorRect" parent="Gui/Cameras/UI"]
 material = SubResource("ShaderMaterial_dd2rk")
-offset_right = 1280.0
-offset_bottom = 720.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
-[node name="Static" type="ColorRect" parent="Gui/Cameras/UI"]
+[node name="Static" type="ColorRect" parent="Gui/Cameras/UI/Perspective"]
 material = SubResource("ShaderMaterial_cxt8k")
-offset_left = -0.0303679
-offset_top = -0.0282512
-offset_right = 1279.97
-offset_bottom = 719.972
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
