@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://btfn7hopgei1c"]
+
+[ext_resource type="Texture2D" uid="uid://bj088nbv345wa" path="res://Assets/3-THE_OFFICE/OTHER/GAME_OVER_.png" id="1_2oltb"]
+[ext_resource type="Script" uid="uid://dnoj7k1fhhuy7" path="res://Scripts/gameover.gd" id="1_6kwjr"]
+[ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="2_vnjje"]
+[ext_resource type="AudioStream" uid="uid://jje7i1w57tyi" path="res://Assets/9-AUDIO/static2.wav" id="3_6kwjr"]
+[ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="4_vnjje"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6kwjr"]
+shader = ExtResource("4_vnjje")
+shader_parameter/resolution = Vector2(1024, 768)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.03
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
+[node name="gameover" type="Node2D"]
+script = ExtResource("1_6kwjr")
+
+[node name="gameover_screen" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_2oltb")
+centered = false
+
+[node name="gameover_title" type="Label" parent="."]
+offset_left = 1077.0
+offset_top = 659.0
+offset_right = 1250.0
+offset_bottom = 694.0
+theme_override_fonts/font = ExtResource("2_vnjje")
+theme_override_font_sizes/font_size = 35
+text = "Game Over"
+
+[node name="retry_button" type="Button" parent="."]
+offset_left = 585.0
+offset_top = 54.0
+offset_right = 676.0
+offset_bottom = 104.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_vnjje")
+theme_override_font_sizes/font_size = 30
+text = "Retry"
+flat = true
+
+[node name="main_menu_button" type="Button" parent="."]
+offset_left = 747.0
+offset_top = 54.0
+offset_right = 907.0
+offset_bottom = 104.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_vnjje")
+theme_override_font_sizes/font_size = 30
+text = "Main Menu"
+flat = true
+
+[node name="Arrow" type="Label" parent="."]
+offset_left = 586.0
+offset_top = 99.0
+offset_right = 637.0
+offset_bottom = 141.0
+rotation = 3.1565
+theme_override_font_sizes/font_size = 30
+text = "<<<"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6kwjr")
+autoplay = true
+
+[node name="Static" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6kwjr")
+offset_left = -0.0303679
+offset_top = -0.0282512
+offset_right = 1279.97
+offset_bottom = 719.972
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="retry_button" to="." method="_on_retry_button_mouse_entered"]
+[connection signal="pressed" from="retry_button" to="." method="_on_retry_button_pressed"]
+[connection signal="mouse_entered" from="main_menu_button" to="." method="_on_main_menu_button_mouse_entered"]
+[connection signal="pressed" from="main_menu_button" to="." method="_on_main_menu_button_pressed"]
