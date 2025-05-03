@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwnvt0vv68w42" path="res://Scripts/warning.gd" id="1_osvl0"]
 [ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="2_k7nv6"]
-[ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="3_hme1k"]
+[ext_resource type="Shader" path="res://Shaders/static.gdshader" id="3_hme1k"]
 
 [sub_resource type="Animation" id="Animation_hme1k"]
 length = 0.001

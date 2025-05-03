@@ -14,6 +14,7 @@ var brokeRight = false
 var cameraUp = false
 var scarenow = false
 var gameOver = false
+var restart = false
 # Animatronics
 var animatronics: Dictionary = {
 	"bonnie": {
@@ -64,11 +65,27 @@ var animatronics: Dictionary = {
 
 func _process(delta: float) -> void:
 	if scarenow == false and gameOver == false:
-		if brokeLeft == true:
+		if brokeLeft == true or brokeRight == true:
 			if cameraUp:
 				jumpscare = true
 			if jumpscare == true and !cameraUp:
 				scarenow = true
+	if Input.is_action_just_pressed("ui_down"):
+		reset()
+
+
+func reset():
+		brokeLeft = false
+		brokeRight = false
+		jumpscare = false
+		scarenow = false
+		gameOver = false
+		#Imaginary Match animatronics
+		animatronics["bonnie"]["pos"] = "stage"
+		animatronics["chica"]["pos"] = "stage"
+		animatronics["freddy"]["pos"] = "stage"
+		animatronics["foxy"]["pos"] = "pirate cove"
+
 
 func animatronicPos(x: String):
 	return animatronics[x]["pos"]
@@ -88,8 +105,7 @@ func ai(n: String) -> void:
 							animatronics["bonnie"]["pos"] = "dining area"
 							brokeLeft = false
 						else:
-							if gameOver == false:
-								brokeLeft = true
+							brokeLeft = true
 					_: animatronics["bonnie"]["pos"] = ["dining area", "backstage"].pick_random()
 			"chica":
 				match animatronics["chica"]["pos"]:
@@ -98,5 +114,8 @@ func ai(n: String) -> void:
 					"east hall corner": animatronics["chica"]["pos"] = ["east hall", "kitchen", "dining area", "restroom"].pick_random()
 					"kitchen": animatronics["chica"]["pos"] = ["east hall corner", "restroom", "dining area"].pick_random()
 					"east hall": animatronics["chica"]["pos"] = ["door", "east hall corner"].pick_random()
-					"door": if rightDoor == true: animatronics["chica"]["pos"] = "dining area"
+					"door": 
+						if rightDoor == true: animatronics["chica"]["pos"] = "dining area"
+						else:
+							brokeRight = true
 					_: animatronics["chica"]["pos"] = ["dining area", "restroom"].pick_random()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://rrxva8uhuc2y"]
+[gd_scene load_steps=109 format=3 uid="uid://rrxva8uhuc2y"]
 
 [ext_resource type="Script" uid="uid://c8dl7rkirc121" path="res://Scenes/Office/office.gd" id="1_cxt8k"]
 [ext_resource type="Texture2D" uid="uid://b8u6g2ufsavuf" path="res://Assets/3-THE_OFFICE/1-OFFICE.png" id="1_q58a0"]
@@ -93,10 +93,6 @@
 [ext_resource type="Script" uid="uid://d1hk5c8famsgs" path="res://Scripts/fps.gd" id="65_b8a7v"]
 [ext_resource type="AudioStream" uid="uid://85iqyc1mlp1t" path="res://Assets/9-AUDIO/XSCREAM.wav" id="66_fc4qe"]
 [ext_resource type="AudioStream" uid="uid://bng8u2b8k23sd" path="res://Assets/9-AUDIO/blip3.wav" id="73_rgql7"]
-[ext_resource type="AudioStream" uid="uid://bxx0xrw8edtq" path="res://Assets/9-AUDIO/Vocals_Breaths_S_35972012.wav" id="85_getm1"]
-[ext_resource type="AudioStream" uid="uid://dntpwxgmp3413" path="res://Assets/9-AUDIO/Vocals_Breaths_S_35972014.wav" id="86_i3yrp"]
-[ext_resource type="AudioStream" uid="uid://c5m7yi3tbycwt" path="res://Assets/9-AUDIO/Vocals_Breaths_S_35972006.wav" id="95_jq0gy"]
-[ext_resource type="AudioStream" uid="uid://sylxv741jt0a" path="res://Assets/9-AUDIO/Vocals_Breaths_S_35972008.wav" id="96_88rt3"]
 [ext_resource type="Texture2D" uid="uid://iq5dxo7fvkrg" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM_BONNIE.png" id="117_8ouan"]
 [ext_resource type="Texture2D" uid="uid://b775x7gnq4hqc" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM.png" id="118_agqc2"]
 
@@ -632,8 +628,10 @@ script = ExtResource("1_cxt8k")
 [node name="Office" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.14441e-05)
 sprite_frames = SubResource("SpriteFrames_v47wj")
-animation = &"bonnie_jumpscare"
+animation = &"chica_jumpscare"
 autoplay = "default"
+frame = 24
+frame_progress = 0.503471
 centered = false
 script = ExtResource("6_6r5g6")
 metadata/_edit_lock_ = true
@@ -768,21 +766,6 @@ stream = ExtResource("64_8c5kn")
 
 [node name="jumpscare1" type="AudioStreamPlayer" parent="Office"]
 stream = ExtResource("66_fc4qe")
-
-[node name="breaths" type="Node2D" parent="Office"]
-position = Vector2(0, -1.14441e-05)
-
-[node name="breath1" type="AudioStreamPlayer" parent="Office/breaths"]
-stream = ExtResource("95_jq0gy")
-
-[node name="breath2" type="AudioStreamPlayer" parent="Office/breaths"]
-stream = ExtResource("96_88rt3")
-
-[node name="breath3" type="AudioStreamPlayer" parent="Office/breaths"]
-stream = ExtResource("85_getm1")
-
-[node name="breath4" type="AudioStreamPlayer" parent="Office/breaths"]
-stream = ExtResource("86_i3yrp")
 
 [node name="CamPan" type="Camera2D" parent="."]
 position = Vector2(805, 361)

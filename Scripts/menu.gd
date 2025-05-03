@@ -13,3 +13,7 @@ func _on_load_game_mouse_entered() -> void:
 
 func _on_animation_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_packed(loadNight)
+
+
+func _on_load_game_pressed() -> void:
+	get_tree().change_scene_to_packed(loadNight)

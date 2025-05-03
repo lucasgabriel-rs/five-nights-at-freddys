@@ -1,7 +1,7 @@
 extends Node2D
 
 func _on_left_door_button_pressed() -> void:
-	if !Global.brokeLeft:
+	if Global.brokeLeft == false:
 		if Global.leftDoor == false:
 			$"Left Door".play()
 			Global.leftDoor = true
@@ -13,7 +13,7 @@ func _on_left_door_button_pressed() -> void:
 		$broke2.play()
 
 func _on_right_door_button_pressed() -> void:
-	if !Global.brokeRight:
+	if Global.brokeRight == false:
 		if Global.rightDoor == false:
 			$"Right Door".play()
 			Global.rightDoor = true
@@ -21,3 +21,5 @@ func _on_right_door_button_pressed() -> void:
 			$"Right Door".play_backwards()
 			Global.rightDoor = false
 		$"door close".play()
+	else:
+		$broke2.play()
