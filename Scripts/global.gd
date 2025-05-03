@@ -26,7 +26,7 @@ var animatronics: Dictionary = {
 		0, # Night 6
 		0 # Night 7
 		],
-		"pos": "door"
+		"pos": "stage"
 	},
 	"chica": {
 		"difficult": [20, # Night 1
