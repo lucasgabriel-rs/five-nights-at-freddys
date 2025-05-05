@@ -1,7 +1,8 @@
 extends Node
 
 # Night Counter
-var night: int
+var night: int = 0
+var hours: int = 0
 
 # Doors
 var leftDoor: bool
@@ -13,60 +14,74 @@ var onDoor = false
 
 # Animatronics
 var animatronics: Dictionary = {
-	"bonnie": {
-		"difficult": [20, # Night 1
+	"freddy": {
+		"difficult": [0, # Night 1
 		0, # Night 2
-		0, # Night 3
-		0, # Night 4
-		0, # Night 5
+		1, # Night 3
+		randi_range(1, 2), # Night 4
+		3, # Night 5
 		0, # Night 6
 		0 # Night 7
 		],
 		"pos": "stage",
 		"isInStage": true
+	},
+	"bonnie": {
+		"difficult": [0, # Night 1
+		3, # Night 2
+		6, # Night 3
+		9, # Night 4
+		12, # Night 5
+		15, # Night 6
+		0 # Night 7
+		],
+		"pos": "stage",
+		"isInStage": true,
+		"bonus": 0
 	},
 	"chica": {
-		"difficult": [20, # Night 1
-		0, # Night 2
-		0, # Night 3
-		0, # Night 4
-		0, # Night 5
-		0, # Night 6
+		"difficult": [0, # Night 1
+		2, # Night 2
+		4, # Night 3
+		6, # Night 4
+		8, # Night 5
+		10, # Night 6
 		0 # Night 7
 		],
 		"pos": "stage",
-		"isInStage": true
-	},
-	"freddy": {
-		"difficult": [20, # Night 1
-		0, # Night 2
-		0, # Night 3
-		0, # Night 4
-		0, # Night 5
-		0, # Night 6
-		0 # Night 7
-		],
-		"pos": "stage",
-		"isInStage": true
+		"isInStage": true,
+		"bonus": 0
 	},
 	"foxy": {
-		"difficult": [20, # Night 1
-		0, # Night 2
-		0, # Night 3
-		0, # Night 4
-		0, # Night 5
-		0, # Night 6
+		"difficult": [0, # Night 1
+		2, # Night 2
+		4, # Night 3
+		6, # Night 4
+		8, # Night 5
+		10, # Night 6
 		0 # Night 7
 		],
 		"pos": "pirate cove",
+		"bonus": 0
 	}
 }
 
-func animatronicPos(x: String):
-	return animatronics[x]["pos"]
+func _process(_delta: float) -> void:
+	if hours == 2: animatronics["bonnie"]["bonus"] = 1
+	if hours == 3:
+		animatronics["bonnie"]["bonus"] = 2
+		animatronics["chica"]["bonus"] = 1
+		animatronics["foxy"]["bonus"] = 1
+	if hours >= 4:
+		animatronics["bonnie"]["bonus"] = 3
+		animatronics["chica"]["bonus"] = 2
+		animatronics["foxy"]["bonus"] = 2
+
+func animatronicPos(n: String): return animatronics[n]["pos"]
 
 func ai(n: String) -> void:
-	#randomize()
+	if n != "freddy" and night != 6: animatronics[n]["difficult"][night] += animatronics[n]["bonus"]
+	
 	if animatronics[n]["difficult"][night] >= randi_range(1, 20):
 		match n:
 			"bonnie":

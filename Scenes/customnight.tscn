@@ -8,38 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://hx2vxiha57ee" path="res://Assets/4-CUSTOM_NIGHT/4-FOXY.png" id="6_rktqb"]
 [ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="7_khea3"]
 
-[sub_resource type="Animation" id="Animation_705gj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_nsccr"]
-resource_name = "Fade Out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_vjlgo"]
 resource_name = "Fade In"
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,6 +26,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vxyy6"]
 resource_name = "Fade In 2"
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -66,6 +38,37 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nsccr"]
+resource_name = "Fade Out"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_705gj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vxyy6"]
@@ -129,7 +132,7 @@ text = "Custom Night"
 metadata/_edit_lock_ = true
 
 [node name="Freddy" type="Sprite2D" parent="."]
-position = Vector2(224, 292)
+position = Vector2(248, 288)
 texture = ExtResource("2_vjlgo")
 
 [node name="Difficult" type="Label" parent="Freddy"]
@@ -164,7 +167,7 @@ text = "<"
 flat = true
 
 [node name="Bonnie" type="Sprite2D" parent="."]
-position = Vector2(484, 292)
+position = Vector2(504, 288)
 texture = ExtResource("4_vxyy6")
 
 [node name="Difficult" type="Label" parent="Bonnie"]
@@ -199,7 +202,7 @@ text = "<"
 flat = true
 
 [node name="Chica" type="Sprite2D" parent="."]
-position = Vector2(740, 291)
+position = Vector2(776, 288)
 texture = ExtResource("5_eoixf")
 
 [node name="Difficult" type="Label" parent="Chica"]
@@ -234,7 +237,7 @@ text = "<"
 flat = true
 
 [node name="Foxy" type="Sprite2D" parent="."]
-position = Vector2(998, 291)
+position = Vector2(1028, 288)
 texture = ExtResource("6_rktqb")
 
 [node name="Difficult" type="Label" parent="Foxy"]
@@ -270,9 +273,9 @@ flat = true
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
-offset_left = 69.0
+offset_left = 72.0
 offset_top = 648.0
-offset_right = 276.0
+offset_right = 279.0
 offset_bottom = 687.0
 theme_override_fonts/font = ExtResource("3_705gj")
 theme_override_font_sizes/font_size = 30
@@ -281,13 +284,88 @@ flat = true
 
 [node name="Ready" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1018.0
+offset_left = 1000.0
 offset_top = 648.0
-offset_right = 1225.0
+offset_right = 1207.0
 offset_bottom = 687.0
 theme_override_fonts/font = ExtResource("3_705gj")
 theme_override_font_sizes/font_size = 30
 text = "READY!"
+flat = true
+
+[node name="Set All" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -112.0
+offset_right = 60.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "Set All"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="0" type="Button" parent="Set All"]
+layout_mode = 1
+offset_left = -48.0
+offset_top = 48.0
+offset_right = -23.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "0"
+flat = true
+
+[node name="5" type="Button" parent="Set All"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 48.0
+offset_right = 25.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "5"
+flat = true
+
+[node name="10" type="Button" parent="Set All"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 48.0
+offset_right = 77.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "10"
+flat = true
+
+[node name="15" type="Button" parent="Set All"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 48.0
+offset_right = 129.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "15
+"
+flat = true
+
+[node name="20" type="Button" parent="Set All"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 48.0
+offset_right = 177.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "20"
 flat = true
 
 [node name="Fade" type="ColorRect" parent="."]
@@ -328,4 +406,9 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Foxy/Left Arrow" to="." method="_on_foxy_left_arrow_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Ready" to="." method="_on_ready_pressed"]
+[connection signal="pressed" from="Set All/0" to="." method="_on_set_all_0_pressed"]
+[connection signal="pressed" from="Set All/5" to="." method="_on_set_all_5_pressed"]
+[connection signal="pressed" from="Set All/10" to="." method="_on_set_all_10_pressed"]
+[connection signal="pressed" from="Set All/15" to="." method="_on_set_all_15_pressed"]
+[connection signal="pressed" from="Set All/20" to="." method="_on_set_all_20_pressed"]
 [connection signal="animation_finished" from="Fade/Animation" to="." method="_on_animation_animation_finished"]
