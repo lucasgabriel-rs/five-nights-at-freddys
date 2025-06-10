@@ -54,7 +54,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_k7nv6"]
 resource_name = "appearing"
 length = 5.0
-step = 0.0166667
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -108,7 +107,7 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ynpur"]
 shader = ExtResource("3_hme1k")
-shader_parameter/resolution = Vector2(1024, 768)
+shader_parameter/resolution = Vector2(1280, 720)
 shader_parameter/scan_line_amount = 1.0
 shader_parameter/warp_amount = 0.1
 shader_parameter/noise_amount = 0.03
