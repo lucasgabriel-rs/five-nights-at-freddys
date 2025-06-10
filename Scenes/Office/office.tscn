@@ -76,7 +76,7 @@
 [ext_resource type="Shader" path="res://Shaders/static.gdshader" id="70_8c5kn"]
 [ext_resource type="AudioStream" uid="uid://bng8u2b8k23sd" path="res://Assets/9-AUDIO/blip3.wav" id="73_rgql7"]
 [ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="78_fc4qe"]
-[ext_resource type="Script" path="res://Scripts/hours.gd" id="79_5hgru"]
+[ext_resource type="Script" uid="uid://c8nivp6kl4c7k" path="res://Scripts/hours.gd" id="79_5hgru"]
 [ext_resource type="Texture2D" uid="uid://iq5dxo7fvkrg" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM_BONNIE.png" id="117_8ouan"]
 [ext_resource type="Texture2D" uid="uid://b775x7gnq4hqc" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM.png" id="118_agqc2"]
 
