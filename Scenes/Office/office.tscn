@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://rrxva8uhuc2y"]
+[gd_scene load_steps=94 format=3 uid="uid://rrxva8uhuc2y"]
 
 [ext_resource type="Texture2D" uid="uid://b8u6g2ufsavuf" path="res://Assets/3-THE_OFFICE/1-OFFICE.png" id="1_q58a0"]
 [ext_resource type="Texture2D" uid="uid://d0n1s1ovq05yk" path="res://Assets/3-THE_OFFICE/JUMPSCARES/2-BONNIE/1.png" id="2_hau2h"]
@@ -75,6 +75,8 @@
 [ext_resource type="Script" uid="uid://d1hk5c8famsgs" path="res://Scripts/fps.gd" id="65_b8a7v"]
 [ext_resource type="Shader" path="res://Shaders/static.gdshader" id="70_8c5kn"]
 [ext_resource type="AudioStream" uid="uid://bng8u2b8k23sd" path="res://Assets/9-AUDIO/blip3.wav" id="73_rgql7"]
+[ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="78_fc4qe"]
+[ext_resource type="Script" uid="uid://c8nivp6kl4c7k" path="res://Scripts/hours.gd" id="79_5hgru"]
 [ext_resource type="Texture2D" uid="uid://iq5dxo7fvkrg" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM_BONNIE.png" id="117_8ouan"]
 [ext_resource type="Texture2D" uid="uid://b775x7gnq4hqc" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM.png" id="118_agqc2"]
 
@@ -797,9 +799,10 @@ wait_time = 0.2
 one_shot = true
 
 [node name="FPS" type="Label" parent="Gui"]
+visible = false
 offset_right = 104.0
 offset_bottom = 42.0
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 text = "FPS: XX
 Bonnie Pos: X
 Chica Pos: X
@@ -807,6 +810,24 @@ Freddy Pos: X
 Bonnie: X
 Timer"
 script = ExtResource("65_b8a7v")
+
+[node name="Hours" type="Label" parent="Gui"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 56.0
+offset_right = -32.0
+offset_bottom = 97.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("78_fc4qe")
+theme_override_font_sizes/font_size = 40
+text = "12 AM"
+script = ExtResource("79_5hgru")
+
+[node name="Timer" type="Timer" parent="Gui/Hours"]
+wait_time = 60.0
+autostart = true
 
 [connection signal="pressed" from="Office/Doors/Left Buttons/Door" to="Office/Doors" method="_on_left_door_button_pressed"]
 [connection signal="pressed" from="Office/Doors/Left Buttons/Light" to="Office" method="_on_left_light_pressed"]
@@ -825,3 +846,4 @@ script = ExtResource("65_b8a7v")
 [connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 6" to="Gui/Cameras" method="_on_cam_6_pressed"]
 [connection signal="pressed" from="Gui/Cameras/UI/Buttons/Cam 7" to="Gui/Cameras" method="_on_cam_7_pressed"]
 [connection signal="timeout" from="Gui/Cameras/Timer" to="Gui/Cameras" method="_on_timer_timeout"]
+[connection signal="timeout" from="Gui/Hours/Timer" to="Gui/Hours" method="_on_timer_timeout"]

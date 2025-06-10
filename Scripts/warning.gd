@@ -34,3 +34,4 @@ func _input(event: InputEvent) -> void:
 			get_tree().change_scene_to_packed(menu)
 		else:
 			get_tree().quit()
+	get_tree().change_scene_to_packed(menu)
