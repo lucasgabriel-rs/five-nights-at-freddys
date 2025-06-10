@@ -30,8 +30,5 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Skip Warning"):
-		if canRun:
-			get_tree().change_scene_to_packed(menu)
-		else:
-			get_tree().quit()
-	get_tree().change_scene_to_packed(menu)
+		if canRun: get_tree().change_scene_to_packed(menu)
+		else: get_tree().quit()
