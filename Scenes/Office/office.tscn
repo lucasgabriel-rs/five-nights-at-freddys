@@ -73,7 +73,7 @@
 [ext_resource type="PackedScene" uid="uid://b3oko1ouusfgq" path="res://Scenes/Office/monitor.tscn" id="62_jsacg"]
 [ext_resource type="AudioStream" uid="uid://dw0rvjgdk64gn" path="res://Assets/9-AUDIO/windowscare.wav" id="63_60o0a"]
 [ext_resource type="Script" uid="uid://d1hk5c8famsgs" path="res://Scripts/fps.gd" id="65_b8a7v"]
-[ext_resource type="Shader" path="res://Shaders/static.gdshader" id="70_8c5kn"]
+[ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="70_8c5kn"]
 [ext_resource type="AudioStream" uid="uid://bng8u2b8k23sd" path="res://Assets/9-AUDIO/blip3.wav" id="73_rgql7"]
 [ext_resource type="Texture2D" uid="uid://iq5dxo7fvkrg" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM_BONNIE.png" id="117_8ouan"]
 [ext_resource type="Texture2D" uid="uid://b775x7gnq4hqc" path="res://Assets/6-CAMERAS/8-SUPPLY_ROOM.png" id="118_agqc2"]
