@@ -1,21 +1,20 @@
 extends Node2D
 
+func _process(_delta: float) -> void:
+	if Global.night >= 1: $"Load Game".visible = true
+	if Global.night >= 5: $Night6.visible = true
+	if Global.night == 6: $"Custom Night".visible = true
+
 # Buttons Click
 func _on_new_game_pressed() -> void: $Animation.play("Newspaper")
-
 func _on_load_game_pressed() -> void: $Animation.play("Fade In")
-
 func _on_night_vi_pressed() -> void: $Animation.play("Fade In")
-
 func _on_custom_night_pressed() -> void: $Animation.play("Fade In 2")
 
 # Mouse Entered
 func _on_new_game_mouse_entered() -> void: arrow($"New Game")
-
 func _on_load_game_mouse_entered() -> void: arrow($"Load Game")
-
-func _on_night_vi_mouse_entered() -> void: arrow($"Night VI")
-
+func _on_night_vi_mouse_entered() -> void: arrow($Night6)
 func _on_custom_night_mouse_entered() -> void: arrow($"Custom Night")
 
 # Load to Loading Screen
