@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dw5cktmmdi64m" path="res://Assets/2-MENU_TWITCHING/4.png" id="4_1by5w"]
 [ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="6_jsrd8"]
 [ext_resource type="Texture2D" uid="uid://c70ur0ab2mbh7" path="res://Assets/2.5-START_TO_END/NEWSPAPER.png" id="8_q3rjx"]
-[ext_resource type="Shader" path="res://Shaders/static.gdshader" id="13_ocger"]
+[ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="13_ocger"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i37ye"]
 animations = [{

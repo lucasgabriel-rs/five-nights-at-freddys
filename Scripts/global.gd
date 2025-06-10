@@ -12,7 +12,6 @@ var jumpscare = false
 var brokeLeft = false
 var brokeRight = false
 var cameraUp = false
-var scarenow = false
 var gameOver = false
 var restart = false
 # Animatronics
@@ -64,12 +63,9 @@ var animatronics: Dictionary = {
 }
 
 func _process(delta: float) -> void:
-	if scarenow == false and gameOver == false:
+	if jumpscare == false and gameOver == false:
 		if brokeLeft == true or brokeRight == true:
-			if cameraUp:
-				jumpscare = true
-			if jumpscare == true and !cameraUp:
-				scarenow = true
+			if cameraUp: jumpscare = true
 	if Input.is_action_just_pressed("ui_down"):
 		reset()
 
@@ -78,7 +74,6 @@ func reset():
 		brokeLeft = false
 		brokeRight = false
 		jumpscare = false
-		scarenow = false
 		gameOver = false
 		#Imaginary Match animatronics
 		animatronics["bonnie"]["pos"] = "stage"
