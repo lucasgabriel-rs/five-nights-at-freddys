@@ -423,9 +423,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("59_p76gv")
-}, {
-"duration": 1.0,
-"texture": null
 }],
 "loop": true,
 "name": &"foxy",
@@ -629,7 +626,7 @@ centered = false
 [node name="East Hall Corner" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_s57mc")
-animation = &"chica 1"
+animation = &"freddy"
 autoplay = "default"
 centered = false
 
@@ -643,9 +640,8 @@ centered = false
 [node name="East Hall" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_n2jfs")
-animation = &"chica"
+animation = &"freddy"
 autoplay = "default"
-frame_progress = 0.644509
 centered = false
 
 [node name="Kitchen" type="ColorRect" parent="."]

@@ -15,6 +15,8 @@ var cameras: Array = [
 
 @onready var supply_room: AnimatedSprite2D = $"UI/Supply Room"
 
+var foxcam = false
+# Stage
 func _on_cam_1a_pressed() -> void:
 	$"blip".play()
 	cameras[0].visible = true
@@ -28,9 +30,10 @@ func _on_cam_1a_pressed() -> void:
 	cameras[7].visible = false
 	cameras[8].visible = false
 	cameras[9].visible = false
-
+# Dining Area
 func _on_cam_1b_pressed() -> void:
 	$"blip".play()
+	Global.currentCam = "dining area"
 	cameras[0].visible = false
 	cameras[1].visible = true
 	cameras[2].visible = false
@@ -59,6 +62,7 @@ func _on_cam_1c_pressed() -> void:
 
 func _on_cam_2a_pressed() -> void:
 	$"blip".play()
+	foxcam = true
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -98,9 +102,10 @@ func _on_cam_3_pressed() -> void:
 	cameras[7].visible = false
 	cameras[8].visible = false
 	cameras[9].visible = false
-
+#East Hall Corner
 func _on_cam_4a_pressed() -> void:
 	$"blip".play()
+	Global.currentCam = "East Hall Corner"
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -112,9 +117,10 @@ func _on_cam_4a_pressed() -> void:
 	cameras[7].visible = false
 	cameras[8].visible = false
 	cameras[9].visible = false
-
+# East Hall
 func _on_cam_4b_pressed() -> void:
 	$"blip".play()
+	Global.currentCam = "East Hall"
 	cameras[0].visible = false
 	cameras[1].visible = false
 	cameras[2].visible = false
@@ -176,6 +182,8 @@ func _on_timer_timeout() -> void:
 	cameraUpdate("chica")
 	Global.ai("foxy")
 	cameraUpdate("foxy")
+	Global.ai("freddy")
+	cameraUpdate("freddy")
 
 func cameraUpdate(animatronic: String) -> void:
 	match animatronic:
@@ -253,6 +261,10 @@ func cameraUpdate(animatronic: String) -> void:
 					elif Global.steps == 2: cameras[2].play("stage 2")
 					elif Global.steps == 3: cameras[2].play("stage 3")
 					else: cameras[2].play("default")
-				"west hall corner": 
+				"west hall corner":
 					cameras[5].play("foxy")
-					if cameras[5].frame == 31: Global.canJump = true
+					if cameras[5].animation == "foxy" and cameras[5].animation_finished:
+						cameras[5].play("default")
+		"freddy":
+			match Global.animatronicPos(animatronic):
+				"east hall": cameras[8].play("freddy")

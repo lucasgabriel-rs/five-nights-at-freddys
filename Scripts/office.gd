@@ -12,12 +12,14 @@ func _process(_delta: float) -> void:
 		"chica": self.play("chica")
 		"bonniejump": self.play("bonnie_jumpscare")
 		"chicajump": self.play("chica_jumpscare")
+		"foxyjump": self.play("foxy_jumpscare")
+		"freddyjump": self.play("freddy_normaljump")
 		_: self.play("default")
 	if Global.jumpscare and !Global.cameraUp:
 		$Doors.visible = false
+		$Fan.visible = false
 		jumps()
-	if Global.brokeLeft == true and Global.cameraUp == true or Global.brokeRight == true and Global.cameraUp == true:
-		breathsSound()
+	Sounds()
 	buttons()
 
 func jumps():
@@ -29,14 +31,25 @@ func jumps():
 			lights = "chicajump"
 			if self.frame == 32:
 				Global.gameOver = true
-		if !$jumpscare1.is_playing(): $jumpscare1.play()
+		elif Global.canJump == "foxy":
+			lights = "foxyjump"
+			if self.frame == 21: Global.gameOver = true
+		elif Global.canJump == "freddy":
+			lights = "freddyjump"
+			if self.frame == 29:
+				Global.gameOver = true
+		#if !$jumpscare1.is_playing(): $jumpscare1.play()
 
-func breathsSound():
-	match Global.breaths:
-		1: if !$breaths/breath1.is_playing(): $breaths/breath1.play()
-		2: if !$breaths/breath2.is_playing(): $breaths/breath2.play()
-		3: if !$breaths/breath3.is_playing(): $breaths/breath3.play()
-		4: if !$breaths/breath4.is_playing(): $breaths/breath4.play()
+func Sounds():
+	if Global.cameraUp and Global.jumpscare:
+		if Global.brokeLeft or Global.brokeRight:
+			match Global.breaths:
+				1: if !$breaths/breath1.is_playing(): $breaths/breath1.play()
+				2: if !$breaths/breath2.is_playing(): $breaths/breath2.play()
+				3: if !$breaths/breath3.is_playing(): $breaths/breath3.play()
+				4: if !$breaths/breath4.is_playing(): $breaths/breath4.play()
+	if Global.animatronics["foxy"]["pos"] == "west hall corner" and Global.leftDoor: 
+		if !$knock.is_playing(): $knock.play()
 
 func _on_left_light_pressed() -> void:
 	if lights == "none" and !Global.brokeLeft:
@@ -54,7 +67,7 @@ func _on_left_light_pressed() -> void:
 	else: 
 		lights = "none"
 		$"lights sound".stop()
-		if Global.brokeLeft == true: $brokeL.play()
+		if Global.brokeLeft == true: $broke.play()
 
 func _on_right_light_pressed() -> void:
 	if lights == "none" and Global.brokeRight == false: 
@@ -72,7 +85,7 @@ func _on_right_light_pressed() -> void:
 	else: 
 		lights = "none"
 		$"lights sound".stop()
-		if Global.brokeRight == true: $brokeR.play()
+		if Global.brokeRight == true: $broke.play()
 
 func _on_noise_pressed() -> void: $Noise.play()
 

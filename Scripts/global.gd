@@ -5,23 +5,29 @@ var night: int
 
 # Doors
 var leftDoor: bool
-var rightDoor: bool
+var rightDoor: bool = false
 
-# Jumpscare
+# Jumpscare Set-up
 var jumpscare = false
 var scarenow = false
+
+# The Gang Set-ups
+var steps = 0
+var canJump = ""
+var breaths = [1, 2, 3, 4].pick_random()
 var brokeLeft = false
 var brokeRight = false
+
+# Misc
+var currentCam = "stage"
 var cameraUp = false
 var gameOver = false
 var restart = false
-var steps = 0
-var canJump = false
-var breaths = [1, 2, 3, 4].pick_random()
+
 # Animatronics
 var animatronics: Dictionary = {
 	"bonnie": {
-		"difficult": [20, # Night 1
+		"difficult": [0, # Night 1
 		0, # Night 2
 		0, # Night 3
 		0, # Night 4
@@ -29,10 +35,10 @@ var animatronics: Dictionary = {
 		0, # Night 6
 		0 # Night 7
 		],
-		"pos": "door"
+		"pos": "stage"
 	},
 	"chica": {
-		"difficult": [20, # Night 1
+		"difficult": [0, # Night 1
 		0, # Night 2
 		0, # Night 3
 		0, # Night 4
@@ -40,10 +46,10 @@ var animatronics: Dictionary = {
 		0, # Night 6
 		0 # Night 7
 		],
-		"pos": "door"
+		"pos": "stage"
 	},
 	"freddy": {
-		"difficult": [20, # Night 1
+		"difficult": [0, # Night 1
 		0, # Night 2
 		0, # Night 3
 		0, # Night 4
@@ -124,10 +130,28 @@ func ai(n: String) -> void:
 					"pirate cove": 
 						if !cameraUp:
 							steps+=1
-							if steps >= 4: if !cameraUp: animatronics["foxy"]["pos"] = "west hall corner"
+							if steps >= 4: 
+								animatronics["foxy"]["pos"] = "west hall corner"
+								steps = 0
 					"west hall corner":
-						if canJump: 
-							animatronics["foxy"]["pos"] = "door"
-							canJump	= false
-					"door": 
 						if leftDoor: animatronics["foxy"]["pos"] = "pirate cove"
+						else: 
+							canJump = "foxy"
+							scarenow = true
+							jumpscare = true
+			"freddy":
+				match animatronics["freddy"]["pos"]:
+					"dining area": animatronics["freddy"]["pos"] = ["east hall corner", "kitchen", "restroom"].pick_random()
+					"restroom": animatronics["freddy"]["pos"] = ["east hall corner", "kitchen", "dining area"].pick_random()
+					"kitchen": animatronics["freddy"]["pos"] = ["east hall corner", "restroom", "dining area"].pick_random()
+					"east hall corner": animatronics["freddy"]["pos"] = "east hall"
+					"east hall":
+						if rightDoor == true: animatronics["freddy"]["pos"] = "dining area"
+						else: 
+							if cameraUp and currentCam == "East Hall": pass
+							elif animatronics["chica"]["pos"] == "east hall": pass
+							else:
+								canJump = "freddy"
+								jumpscare = true
+								scarenow = true 
+					_: animatronics["freddy"]["pos"] = ["dining area", "restroom", "kitchen"].pick_random()
