@@ -423,6 +423,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("59_p76gv")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"foxy",
@@ -619,8 +622,8 @@ centered = false
 [node name="West Hall Corner" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_2nlkr")
+animation = &"foxy"
 autoplay = "default"
-frame_progress = 0.37816
 centered = false
 
 [node name="East Hall Corner" type="AnimatedSprite2D" parent="."]

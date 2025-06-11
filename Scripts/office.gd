@@ -13,18 +13,17 @@ func _process(_delta: float) -> void:
 		"bonniejump": self.play("bonnie_jumpscare")
 		"chicajump": self.play("chica_jumpscare")
 		_: self.play("default")
-	if Global.scarenow == true:
+	if Global.jumpscare and !Global.cameraUp:
 		$Doors.visible = false
 		jumps()
-	if Global.brokeLeft == true and Global.cameraUp == true:
-		breathsSound([1, 2, 3, 4].pick_random())
+	if Global.brokeLeft == true and Global.cameraUp == true or Global.brokeRight == true and Global.cameraUp == true:
+		breathsSound()
 	buttons()
 
 func jumps():
-	if Global.jumpscare == true:
 		if Global.brokeLeft == true:
 			lights = "bonniejump"
-			if self.frame == 21:
+			if self.frame == 22:
 				Global.gameOver = true
 		elif Global.brokeRight == true:
 			lights = "chicajump"
@@ -32,13 +31,12 @@ func jumps():
 				Global.gameOver = true
 		if !$jumpscare1.is_playing(): $jumpscare1.play()
 
-func breathsSound(t):
-	match t:
+func breathsSound():
+	match Global.breaths:
 		1: if !$breaths/breath1.is_playing(): $breaths/breath1.play()
 		2: if !$breaths/breath2.is_playing(): $breaths/breath2.play()
 		3: if !$breaths/breath3.is_playing(): $breaths/breath3.play()
 		4: if !$breaths/breath4.is_playing(): $breaths/breath4.play()
-	print("respiro!!")
 
 func _on_left_light_pressed() -> void:
 	if lights == "none" and !Global.brokeLeft:

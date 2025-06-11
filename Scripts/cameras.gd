@@ -174,6 +174,8 @@ func _on_timer_timeout() -> void:
 	cameraUpdate("bonnie")
 	Global.ai("chica")
 	cameraUpdate("chica")
+	Global.ai("foxy")
+	cameraUpdate("foxy")
 
 func cameraUpdate(animatronic: String) -> void:
 	match animatronic:
@@ -244,3 +246,13 @@ func cameraUpdate(animatronic: String) -> void:
 					cameras[3].play("default") # Restroom
 					cameras[6].play("default") # East Hall Corner
 					cameras[8].play("default") # East Hall
+		"foxy":
+			match Global.animatronicPos(animatronic):
+				"pirate cove":
+					if Global.steps == 1: cameras[2].play("stage 1")
+					elif Global.steps == 2: cameras[2].play("stage 2")
+					elif Global.steps == 3: cameras[2].play("stage 3")
+					else: cameras[2].play("default")
+				"west hall corner": 
+					cameras[5].play("foxy")
+					if cameras[5].frame == 31: Global.canJump = true

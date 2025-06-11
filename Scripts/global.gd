@@ -9,11 +9,15 @@ var rightDoor: bool
 
 # Jumpscare
 var jumpscare = false
+var scarenow = false
 var brokeLeft = false
 var brokeRight = false
 var cameraUp = false
 var gameOver = false
 var restart = false
+var steps = 0
+var canJump = false
+var breaths = [1, 2, 3, 4].pick_random()
 # Animatronics
 var animatronics: Dictionary = {
 	"bonnie": {
@@ -25,7 +29,7 @@ var animatronics: Dictionary = {
 		0, # Night 6
 		0 # Night 7
 		],
-		"pos": "stage"
+		"pos": "door"
 	},
 	"chica": {
 		"difficult": [20, # Night 1
@@ -36,7 +40,7 @@ var animatronics: Dictionary = {
 		0, # Night 6
 		0 # Night 7
 		],
-		"pos": "stage"
+		"pos": "door"
 	},
 	"freddy": {
 		"difficult": [20, # Night 1
@@ -66,6 +70,7 @@ func _process(delta: float) -> void:
 	if jumpscare == false and gameOver == false:
 		if brokeLeft == true or brokeRight == true:
 			if cameraUp: jumpscare = true
+			if jumpscare and !cameraUp: scarenow = true
 	if Input.is_action_just_pressed("ui_down"):
 		reset()
 
@@ -114,3 +119,15 @@ func ai(n: String) -> void:
 						else:
 							brokeRight = true
 					_: animatronics["chica"]["pos"] = ["dining area", "restroom"].pick_random()
+			"foxy":
+				match animatronics["foxy"]["pos"]:
+					"pirate cove": 
+						if !cameraUp:
+							steps+=1
+							if steps >= 4: if !cameraUp: animatronics["foxy"]["pos"] = "west hall corner"
+					"west hall corner":
+						if canJump: 
+							animatronics["foxy"]["pos"] = "door"
+							canJump	= false
+					"door": 
+						if leftDoor: animatronics["foxy"]["pos"] = "pirate cove"
