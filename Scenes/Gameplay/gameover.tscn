@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://720ntnxmeyrb"]
+[gd_scene format=3 uid="uid://720ntnxmeyrb"]
 
 [ext_resource type="Texture2D" uid="uid://bj088nbv345wa" path="res://Assets/3-THE_OFFICE/OTHER/GAME_OVER_.png" id="1_2oltb"]
-[ext_resource type="Script" uid="uid://dnoj7k1fhhuy7" path="res://Scripts/gameover.gd" id="1_6kwjr"]
+[ext_resource type="Script" uid="uid://dnoj7k1fhhuy7" path="res://Scripts/Gameplay/gameover.gd" id="1_6kwjr"]
 [ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="2_vnjje"]
 [ext_resource type="AudioStream" uid="uid://cxqb3uujdv8xw" path="res://Assets/9-AUDIO/ColdPresc B.wav" id="4_6kwjr"]
 [ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="4_vnjje"]
@@ -24,15 +24,19 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
-[node name="gameover" type="Node2D"]
+[node name="gameover" type="Control" unique_id=1870883805]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_6kwjr")
 
-[node name="gameover_screen" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
+[node name="gameover_screen" type="TextureRect" parent="." unique_id=878564554]
+layout_mode = 0
+offset_top = -1.0
+offset_bottom = -1.0
 texture = ExtResource("1_2oltb")
-centered = false
 
-[node name="gameover_title" type="Label" parent="."]
+[node name="gameover_title" type="Label" parent="." unique_id=1904744536]
+layout_mode = 0
 offset_left = 1077.0
 offset_top = 659.0
 offset_right = 1250.0
@@ -41,7 +45,8 @@ theme_override_fonts/font = ExtResource("2_vnjje")
 theme_override_font_sizes/font_size = 35
 text = "Game Over"
 
-[node name="retry_button" type="Button" parent="."]
+[node name="retry_button" type="Button" parent="." unique_id=2015278375]
+layout_mode = 0
 offset_left = 585.0
 offset_top = 54.0
 offset_right = 685.0
@@ -52,7 +57,8 @@ theme_override_font_sizes/font_size = 30
 text = "Retry"
 flat = true
 
-[node name="main_menu_button" type="Button" parent="."]
+[node name="main_menu_button" type="Button" parent="." unique_id=1893715301]
+layout_mode = 0
 offset_left = 747.0
 offset_top = 54.0
 offset_right = 907.0
@@ -63,7 +69,8 @@ theme_override_font_sizes/font_size = 30
 text = "Main Menu"
 flat = true
 
-[node name="Arrow" type="Label" parent="."]
+[node name="Arrow" type="Label" parent="." unique_id=1593695402]
+layout_mode = 0
 offset_left = 586.0
 offset_top = 99.0
 offset_right = 637.0
@@ -72,18 +79,19 @@ rotation = 3.1565
 theme_override_font_sizes/font_size = 30
 text = "<<<"
 
-[node name="gameover_sfx" type="AudioStreamPlayer2D" parent="."]
+[node name="gameover_sfx" type="AudioStreamPlayer" parent="." unique_id=540545191]
 stream = ExtResource("4_6kwjr")
 autoplay = true
 
-[node name="entered_button_sfx" type="AudioStreamPlayer2D" parent="."]
+[node name="entered_button_sfx" type="AudioStreamPlayer" parent="." unique_id=1547223486]
 stream = ExtResource("5_bb3cs")
 
-[node name="pressed_button_sfx" type="AudioStreamPlayer2D" parent="."]
+[node name="pressed_button_sfx" type="AudioStreamPlayer" parent="." unique_id=1066819184]
 stream = ExtResource("5_bb3cs")
 
-[node name="Static" type="ColorRect" parent="."]
+[node name="Static" type="ColorRect" parent="." unique_id=124003600]
 material = SubResource("ShaderMaterial_6kwjr")
+layout_mode = 0
 offset_left = -0.0303679
 offset_top = -0.0282512
 offset_right = 1279.97

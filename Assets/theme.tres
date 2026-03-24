@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dg6nfqfee2nik"]
+
+[ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="1_0dftj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dftj"]
+
+[resource]
+default_font = ExtResource("1_0dftj")
+Button/font_sizes/font_size = 30
+Button/styles/focus = SubResource("StyleBoxEmpty_0dftj")
+Label/font_sizes/font_size = 25
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+VBoxContainer/constants/separation = 4

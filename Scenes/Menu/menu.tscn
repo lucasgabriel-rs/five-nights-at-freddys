@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://c2hcan7a64ttm"]
+
+[ext_resource type="Texture2D" uid="uid://1gokgffucx1g" path="res://Assets/2-MENU_TWITCHING/1.png" id="1_x5f3s"]
+[ext_resource type="Theme" uid="uid://dg6nfqfee2nik" path="res://Assets/theme.tres" id="2_3qr6s"]
+[ext_resource type="Script" uid="uid://6ptv5tc3syyl" path="res://Scripts/Main Menu/twitch.gd" id="2_uwxxs"]
+[ext_resource type="Texture2D" uid="uid://knnc76jdca23" path="res://Assets/1-MAIN_TEXT/STAR.png" id="4_uwxxs"]
+
+[node name="Menu" type="TextureRect" unique_id=778769677]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x5f3s")
+expand_mode = 1
+script = ExtResource("2_uwxxs")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1734264135]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3qr6s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=796378384]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_3qr6s")
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1130284678]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1231891649]
+layout_mode = 2
+theme = ExtResource("2_3qr6s")
+theme_override_font_sizes/font_size = 60
+text = "Five
+Nights
+at
+Freddy's"
+
+[node name="StarContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=597229205]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Star" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/StarContainer" unique_id=1643133460]
+layout_mode = 2
+texture = ExtResource("4_uwxxs")
+
+[node name="Star2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/StarContainer" unique_id=1816131494]
+layout_mode = 2
+texture = ExtResource("4_uwxxs")
+
+[node name="Star3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/StarContainer" unique_id=475163730]
+layout_mode = 2
+texture = ExtResource("4_uwxxs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1726442994]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_3qr6s")
+
+[node name="NewGame" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=568599077]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_3qr6s")
+text = "New Game"
+flat = true
+
+[node name="LoadGame" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1700814813]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_3qr6s")
+text = "Load Game"
+flat = true
+
+[node name="Night6" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1382606059]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_3qr6s")
+text = "6th Night"
+flat = true
+
+[node name="CustomNight" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=290493679]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_3qr6s")
+text = "Custom Night"
+flat = true
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=584224764]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_3qr6s")
+text = "Exit"
+flat = true
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=39263815]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Created by Scott Cawthon
+Remaster by Sirius Stardust"
+horizontal_alignment = 2

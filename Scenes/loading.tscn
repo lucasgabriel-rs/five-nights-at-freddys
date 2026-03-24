@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ngnoo1mrksp2"]
+[gd_scene format=3 uid="uid://ngnoo1mrksp2"]
 
-[ext_resource type="Script" uid="uid://bfyr8ponlwc1k" path="res://Scripts/loading.gd" id="1_k66n3"]
+[ext_resource type="Script" uid="uid://bfyr8ponlwc1k" path="res://Scripts/Gameplay/loading.gd" id="1_k66n3"]
 [ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="2_31xe0"]
 [ext_resource type="Texture2D" uid="uid://bajlg8r2epm1u" path="res://Assets/7-NIGHT_LOADING/LITTLE_CLOCK.png" id="2_xrc7h"]
 
@@ -83,7 +83,7 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
-[node name="Loading" type="Control"]
+[node name="Loading" type="Control" unique_id=1052855291]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,7 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k66n3")
 
-[node name="Backgound" type="ColorRect" parent="."]
+[node name="Backgound" type="ColorRect" parent="." unique_id=550531605]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -102,7 +102,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=321742647]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -116,22 +116,20 @@ offset_bottom = 43.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
-text = "Nst Night
+text = "1st Night
 12 AM"
 horizontal_alignment = 1
 
-[node name="Animation" type="AnimationPlayer" parent="Label"]
-libraries = {
-&"": SubResource("AnimationLibrary_dlcsm")
-}
-autoplay = "fade"
+[node name="Animation" type="AnimationPlayer" parent="Label" unique_id=1444366845]
+libraries/ = SubResource("AnimationLibrary_dlcsm")
+autoplay = &"fade"
 
-[node name="Clock" type="Sprite2D" parent="."]
+[node name="Clock" type="Sprite2D" parent="." unique_id=1251479928]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1248, 688)
 texture = ExtResource("2_xrc7h")
 
-[node name="Static" type="ColorRect" parent="."]
+[node name="Static" type="ColorRect" parent="." unique_id=146139575]
 material = SubResource("ShaderMaterial_qw0b6")
 layout_mode = 0
 offset_left = -0.0303679

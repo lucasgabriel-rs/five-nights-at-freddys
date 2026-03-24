@@ -1,0 +1,139 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7e18wb7knrhf"]
+
+[ext_resource type="Theme" uid="uid://dg6nfqfee2nik" path="res://Assets/theme.tres" id="1_608um"]
+[ext_resource type="Texture2D" uid="uid://bsj328baffvv8" path="res://Assets/4-CUSTOM_NIGHT/1-FREDDY.png" id="2_vjlgo"]
+[ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="3_705gj"]
+[ext_resource type="PackedScene" uid="uid://d1g3xniwpqmq8" path="res://Scenes/Menu/animatronic.tscn" id="3_y6wgc"]
+[ext_resource type="Texture2D" uid="uid://bl3jya3afpt74" path="res://Assets/4-CUSTOM_NIGHT/2-BONNIE.png" id="4_vxyy6"]
+[ext_resource type="Texture2D" uid="uid://dhewyv3rlentb" path="res://Assets/4-CUSTOM_NIGHT/3-CHICA.png" id="5_eoixf"]
+[ext_resource type="Texture2D" uid="uid://hx2vxiha57ee" path="res://Assets/4-CUSTOM_NIGHT/4-FOXY.png" id="6_rktqb"]
+
+[node name="Custom Night" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_608um")
+
+[node name="Custom Night" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_608um")
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 60
+text = "Custom Night"
+metadata/_edit_lock_ = true
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("1_608um")
+text = "Back to Menu"
+flat = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Freddy" parent="CenterContainer/HBoxContainer" instance=ExtResource("3_y6wgc")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Icon" parent="CenterContainer/HBoxContainer/Freddy" index="0"]
+texture = ExtResource("2_vjlgo")
+
+[node name="Bonnie" parent="CenterContainer/HBoxContainer" instance=ExtResource("3_y6wgc")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Icon" parent="CenterContainer/HBoxContainer/Bonnie" index="0"]
+texture = ExtResource("4_vxyy6")
+
+[node name="Chica" parent="CenterContainer/HBoxContainer" instance=ExtResource("3_y6wgc")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Icon" parent="CenterContainer/HBoxContainer/Chica" index="0"]
+texture = ExtResource("5_eoixf")
+
+[node name="Foxy" parent="CenterContainer/HBoxContainer" instance=ExtResource("3_y6wgc")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Icon" parent="CenterContainer/HBoxContainer/Foxy" index="0"]
+texture = ExtResource("6_rktqb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Set All" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "Set All"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="0" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "0"
+flat = true
+
+[node name="5" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "5"
+flat = true
+
+[node name="10" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "10"
+flat = true
+
+[node name="15" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "15
+"
+flat = true
+
+[node name="20" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_705gj")
+theme_override_font_sizes/font_size = 30
+text = "20"
+flat = true
+
+[node name="Ready" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("1_608um")
+text = "READY!"
+flat = true
+
+[editable path="CenterContainer/HBoxContainer/Freddy"]
+[editable path="CenterContainer/HBoxContainer/Bonnie"]
+[editable path="CenterContainer/HBoxContainer/Chica"]
+[editable path="CenterContainer/HBoxContainer/Foxy"]

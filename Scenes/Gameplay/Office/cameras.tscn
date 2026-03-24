@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://byhu7foa6fv5v"]
+[gd_scene format=3 uid="uid://dsje6qroljnr8"]
 
 [ext_resource type="Texture2D" uid="uid://cqeaqu07klo66" path="res://Assets/6-CAMERAS/1-STAGE_CHICA.png" id="1_ppc14"]
 [ext_resource type="Texture2D" uid="uid://tr6uuduupdxn" path="res://Assets/6-CAMERAS/1-STAGE_BONNIE.png" id="2_mqjsw"]
@@ -583,69 +583,64 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Cameras" type="Node2D"]
+[node name="Cameras" type="Node2D" unique_id=1905705472]
 
-[node name="Stage" type="AnimatedSprite2D" parent="."]
+[node name="Stage" type="AnimatedSprite2D" parent="." unique_id=261663973]
 sprite_frames = SubResource("SpriteFrames_eceyq")
 autoplay = "default"
 centered = false
 
-[node name="Dining Area" type="AnimatedSprite2D" parent="."]
+[node name="Dining Area" type="AnimatedSprite2D" parent="." unique_id=1528498008]
 visible = false
 sprite_frames = SubResource("SpriteFrames_1d5sq")
-animation = &"freddy"
 autoplay = "default"
 centered = false
 
-[node name="Pirate Cove" type="AnimatedSprite2D" parent="."]
+[node name="Pirate Cove" type="AnimatedSprite2D" parent="." unique_id=1533530086]
 visible = false
 sprite_frames = SubResource("SpriteFrames_2l2nu")
 autoplay = "default"
 centered = false
 
-[node name="Restrooms" type="AnimatedSprite2D" parent="."]
+[node name="Restrooms" type="AnimatedSprite2D" parent="." unique_id=1888748324]
 visible = false
 sprite_frames = SubResource("SpriteFrames_efpsg")
 autoplay = "default"
 centered = false
 
-[node name="Backstage" type="AnimatedSprite2D" parent="."]
+[node name="Backstage" type="AnimatedSprite2D" parent="." unique_id=1118625849]
 visible = false
 sprite_frames = SubResource("SpriteFrames_qsves")
 autoplay = "default"
 centered = false
 
-[node name="West Hall Corner" type="AnimatedSprite2D" parent="."]
+[node name="West Hall Corner" type="AnimatedSprite2D" parent="." unique_id=195669298]
 visible = false
 sprite_frames = SubResource("SpriteFrames_2nlkr")
 autoplay = "default"
 frame_progress = 0.37816
 centered = false
 
-[node name="East Hall Corner" type="AnimatedSprite2D" parent="."]
+[node name="East Hall Corner" type="AnimatedSprite2D" parent="." unique_id=1345801896]
 visible = false
 sprite_frames = SubResource("SpriteFrames_s57mc")
-animation = &"chica 1"
 autoplay = "default"
 centered = false
 
-[node name="West Hall" type="AnimatedSprite2D" parent="."]
+[node name="West Hall" type="AnimatedSprite2D" parent="." unique_id=1353700214]
 visible = false
 sprite_frames = SubResource("SpriteFrames_5mp1a")
 autoplay = "default"
 frame_progress = 0.700339
 centered = false
 
-[node name="East Hall" type="AnimatedSprite2D" parent="."]
+[node name="East Hall" type="AnimatedSprite2D" parent="." unique_id=1785371053]
 visible = false
 sprite_frames = SubResource("SpriteFrames_n2jfs")
-animation = &"chica"
 autoplay = "default"
-frame_progress = 0.644509
 centered = false
 
-[node name="Kitchen" type="ColorRect" parent="."]
-visible = false
+[node name="Kitchen" type="ColorRect" parent="." unique_id=881472706]
 offset_right = 1600.0
 offset_bottom = 720.0
 mouse_filter = 2
