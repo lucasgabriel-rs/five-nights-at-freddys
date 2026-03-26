@@ -1,8 +1,9 @@
-extends AnimatedSprite2D
+extends Area2D
 
 @export var is_right_door: bool
 var is_close: bool = false
 @onready var close: AudioStreamPlayer2D = $Close
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _process(_delta: float) -> void:
@@ -16,11 +17,11 @@ func _process(_delta: float) -> void:
 
 func _animation_door(door: String) -> void:
 	if is_close:
-		play_backwards(door)
+		animated_sprite_2d.play_backwards(door)
 		close.play()
 		is_close = false
 	else:
-		play(door)
+		animated_sprite_2d.play(door)
 		close.play()
 		is_close = true
 	

@@ -1,146 +1,21 @@
 [gd_scene format=3 uid="uid://du3mayah3i1s"]
 
-[ext_resource type="Texture2D" uid="uid://i6snkyr8vsap" path="res://Assets/3-THE_OFFICE/DOORS/STOPPED/103.png" id="1_hbaag"]
-[ext_resource type="Texture2D" uid="uid://crk6bvicomgbq" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/1.png" id="2_53vcr"]
-[ext_resource type="Texture2D" uid="uid://og4b1yxpxcv1" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/2.png" id="3_jp15b"]
-[ext_resource type="Texture2D" uid="uid://b3ff0iibqym2t" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/3.png" id="4_xhwbl"]
-[ext_resource type="Texture2D" uid="uid://dddaey22brqaj" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/4.png" id="5_tq7hl"]
-[ext_resource type="Texture2D" uid="uid://5nj7xebk4s0l" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/5.png" id="6_kxnfw"]
-[ext_resource type="Texture2D" uid="uid://kgb15viiib8j" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/6.png" id="7_dhrdi"]
-[ext_resource type="Texture2D" uid="uid://cgbftfgg7c2vu" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/7.png" id="8_bkk16"]
-[ext_resource type="Texture2D" uid="uid://cbif77prr8w3h" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/8.png" id="9_f20a5"]
-[ext_resource type="Texture2D" uid="uid://cvk030bbdgah6" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/9.png" id="10_i43a1"]
-[ext_resource type="Texture2D" uid="uid://cwyk3ingqxoxa" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/10.png" id="11_eq2bb"]
-[ext_resource type="Texture2D" uid="uid://57012vh0d2lh" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/11.png" id="12_xppyb"]
-[ext_resource type="Texture2D" uid="uid://bwvcvbru6cm5d" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/12.png" id="13_7864v"]
-[ext_resource type="Texture2D" uid="uid://ci7f1hmtipyj3" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/13.png" id="14_ubjlm"]
-[ext_resource type="Texture2D" uid="uid://cr2i5jbwprvb5" path="res://Assets/3-THE_OFFICE/DOORS/LEFT/14.png" id="15_4t371"]
-[ext_resource type="Texture2D" uid="uid://bqh42858pi2i3" path="res://Assets/3-THE_OFFICE/DOORS/STOPPED/104.png" id="16_kxnfw"]
-[ext_resource type="Texture2D" uid="uid://b24we7eo43yqp" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/1.png" id="16_rqavy"]
-[ext_resource type="Texture2D" uid="uid://juyh0at448ep" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/2.png" id="17_km0wl"]
-[ext_resource type="Texture2D" uid="uid://bvtt0dw77x3l" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/3.png" id="18_et44u"]
-[ext_resource type="Texture2D" uid="uid://31ygqxu2mrha" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/4.png" id="19_lr75u"]
-[ext_resource type="Texture2D" uid="uid://csbo1j3386jml" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/5.png" id="20_o5twe"]
-[ext_resource type="Texture2D" uid="uid://ch02tpunpd51s" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/6.png" id="21_dpofn"]
-[ext_resource type="Texture2D" uid="uid://bjr0djo0h0nih" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/7.png" id="22_jx5ub"]
-[ext_resource type="Texture2D" uid="uid://dyf0skpufc2l1" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/8.png" id="23_pronq"]
-[ext_resource type="Texture2D" uid="uid://xxsr1wabjvfn" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/9.png" id="24_fq7ug"]
-[ext_resource type="Texture2D" uid="uid://c5yb0di4xaqlo" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/10.png" id="25_mxgx3"]
-[ext_resource type="Texture2D" uid="uid://ctiinidqs2ssi" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/11.png" id="26_275k7"]
-[ext_resource type="Texture2D" uid="uid://cv8vu3mc5rn86" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/12.png" id="27_batt4"]
-[ext_resource type="Texture2D" uid="uid://bax4sb74vqurh" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/13.png" id="28_svwb1"]
-[ext_resource type="Texture2D" uid="uid://bgv4e6lq3yj72" path="res://Assets/3-THE_OFFICE/DOORS/RIGHT/14.png" id="29_ypcg0"]
+[ext_resource type="SpriteFrames" uid="uid://c1xo283ke4rpr" path="res://Assets/Sprite Frames/door.tres" id="2_0w0cw"]
 [ext_resource type="AudioStream" uid="uid://bfv3kg1bcki1d" path="res://Assets/9-AUDIO/SFXBible_12478.wav" id="30_53vcr"]
 [ext_resource type="Script" uid="uid://dapd7on6opcgs" path="res://Scripts/Gameplay/Office/door.gd" id="30_tq7hl"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mv6av"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_hbaag")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_53vcr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_jp15b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_xhwbl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_tq7hl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_kxnfw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_dhrdi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_bkk16")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_f20a5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_i43a1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_eq2bb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_xppyb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_7864v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_ubjlm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_4t371")
-}],
-"loop": false,
-"name": &"left",
-"speed": 60.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_kxnfw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_rqavy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_km0wl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_et44u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_lr75u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_o5twe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_dpofn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_jx5ub")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_pronq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_fq7ug")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_mxgx3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_275k7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_batt4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_svwb1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_ypcg0")
-}],
-"loop": false,
-"name": &"right",
-"speed": 60.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w0cw"]
+size = Vector2(223, 720)
 
-[node name="Door" type="AnimatedSprite2D" unique_id=648859342]
-sprite_frames = SubResource("SpriteFrames_mv6av")
-animation = &"right"
-centered = false
+[node name="Door" type="Area2D" unique_id=2060757970]
 script = ExtResource("30_tq7hl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=970978733]
+sprite_frames = ExtResource("2_0w0cw")
+animation = &"left"
 
 [node name="Close" type="AudioStreamPlayer2D" parent="." unique_id=1208414488]
 stream = ExtResource("30_53vcr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1711108433]
+shape = SubResource("RectangleShape2D_0w0cw")

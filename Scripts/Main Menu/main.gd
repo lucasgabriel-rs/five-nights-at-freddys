@@ -1,6 +1,6 @@
 extends ColorRect
 
-var current : String = "menu"
+var current: String = "menu"
 
 @onready var loading_scene := preload("res://Scenes/loading.tscn")
 
@@ -36,16 +36,20 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		
 		$AnimationPlayer.play("fade out")
 	
-	if anim_name == "newspaper": get_tree().change_scene_to_packed(loading_scene)
+	if anim_name == "newspaper":
+		get_tree().change_scene_to_packed(loading_scene)
 
 # Main Menu
-func _on_new_game_pressed() -> void: $AnimationPlayer.play("newspaper")
+func _on_new_game_pressed() -> void:
+	$AnimationPlayer.play("newspaper")
 
 
-func _on_load_game_pressed() -> void: get_tree().change_scene_to_packed(loading_scene)
+func _on_load_game_pressed() -> void:
+	get_tree().change_scene_to_packed(loading_scene)
 
 
-func _on_night_6_pressed() -> void: get_tree().change_scene_to_packed(loading_scene)
+func _on_night_6_pressed() -> void:
+	get_tree().change_scene_to_packed(loading_scene)
 
 
 func _on_custom_night_pressed() -> void:
@@ -53,4 +57,5 @@ func _on_custom_night_pressed() -> void:
 	$AnimationPlayer.play("fade in")
 
 
-func _on_exit_pressed() -> void: get_tree().quit()
+func _on_exit_pressed() -> void:
+	get_tree().quit()

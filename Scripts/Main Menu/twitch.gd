@@ -8,5 +8,7 @@ const images = [
 ]
 
 func _process(_delta: float) -> void:
-	if randi_range(1, 20) > 19: self.texture = load(images[randi_range(1, 3)])
-	else: self.texture = preload(images[0])
+	if randi_range(1, 20) > 19:
+		self.texture = load(images[randi_range(1, 3)])
+	else:
+		self.texture = preload(images[0])

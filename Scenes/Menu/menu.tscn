@@ -41,7 +41,8 @@ theme_override_font_sizes/font_size = 60
 text = "Five
 Nights
 at
-Freddy's"
+Freddy's
+Remaster"
 
 [node name="StarContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=597229205]
 layout_mode = 2

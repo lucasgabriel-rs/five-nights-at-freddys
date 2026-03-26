@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dudpu3pr4pt7h"]
 
-[ext_resource type="Theme" uid="uid://dg6nfqfee2nik" path="res://Assets/theme.tres" id="1_jjvhh"]
-[ext_resource type="Script" uid="uid://8ilyv5gifhkt" path="res://Scripts/Main Menu/main.gd" id="1_kry3j"]
-[ext_resource type="PackedScene" uid="uid://c2hcan7a64ttm" path="res://Scenes/Menu/menu.tscn" id="2_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://c7e18wb7knrhf" path="res://Scenes/Menu/customnight.tscn" id="2_kry3j"]
-[ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="4_jjvhh"]
-[ext_resource type="Texture2D" uid="uid://c70ur0ab2mbh7" path="res://Assets/2.5-START_TO_END/NEWSPAPER.png" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://8ilyv5gifhkt" path="res://Scripts/Main Menu/main.gd" id="1_5326e"]
+[ext_resource type="Theme" uid="uid://dg6nfqfee2nik" path="res://Assets/theme.tres" id="2_l2o7r"]
+[ext_resource type="PackedScene" uid="uid://c7e18wb7knrhf" path="res://Scenes/Menu/customnight.tscn" id="3_juwjy"]
+[ext_resource type="PackedScene" uid="uid://c2hcan7a64ttm" path="res://Scenes/Menu/menu.tscn" id="4_t8w0y"]
+[ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="5_eybw1"]
+[ext_resource type="Texture2D" uid="uid://c70ur0ab2mbh7" path="res://Assets/2.5-START_TO_END/NEWSPAPER.png" id="6_hu3kb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kry3j"]
-shader = ExtResource("4_jjvhh")
+shader = ExtResource("5_eybw1")
 shader_parameter/resolution = Vector2(1024, 768)
 shader_parameter/scan_line_amount = 1.0
 shader_parameter/warp_amount = 0.1
@@ -170,14 +170,14 @@ _data = {
 &"warning": SubResource("Animation_21xkr")
 }
 
-[node name="Main" type="ColorRect" unique_id=1858704405]
+[node name="MainMenu" type="ColorRect" unique_id=1858704405]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-script = ExtResource("1_kry3j")
+script = ExtResource("1_5326e")
 
 [node name="Warning" type="Label" parent="." unique_id=1600242852]
 modulate = Color(1, 1, 1, 0)
@@ -190,16 +190,16 @@ offset_top = -42.0
 offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_jjvhh")
+theme = ExtResource("2_l2o7r")
 text = "WARNING:
 
 This game contains flashing lights and desorienting effects."
 horizontal_alignment = 1
 
-[node name="Custom Night" parent="." unique_id=1217733502 instance=ExtResource("2_kry3j")]
+[node name="Custom Night" parent="." unique_id=1217733502 instance=ExtResource("3_juwjy")]
 layout_mode = 1
 
-[node name="Menu" parent="." unique_id=869863020 instance=ExtResource("2_jjvhh")]
+[node name="Menu" parent="." unique_id=869863020 instance=ExtResource("4_t8w0y")]
 layout_mode = 1
 
 [node name="Static" type="ColorRect" parent="." unique_id=2068650311]
@@ -223,7 +223,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("6_21xkr")
+texture = ExtResource("6_hu3kb")
 expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=86961910]
