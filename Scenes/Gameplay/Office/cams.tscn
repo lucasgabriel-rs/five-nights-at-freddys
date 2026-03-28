@@ -90,6 +90,7 @@
 [ext_resource type="Texture2D" uid="uid://boe1abhcvowyg" path="res://Assets/6-CAMERAS/10-EAST_HALL_NEWS4.png" id="82_fqsjv"]
 [ext_resource type="Script" uid="uid://cw7v5yen03h8k" path="res://Scripts/Gameplay/Cameras/cam_button.gd" id="88_26fd2"]
 [ext_resource type="AudioStream" uid="uid://bng8u2b8k23sd" path="res://Assets/9-AUDIO/blip3.wav" id="90_pm11i"]
+[ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="91_h4cow"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ml3wy"]
 animations = [{
@@ -840,6 +841,23 @@ _data = {
 &"default": SubResource("Animation_bppbw")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ptwrk"]
+shader = ExtResource("91_h4cow")
+shader_parameter/resolution = Vector2(256, 144)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.03
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_45qmh"]
 animations = [{
 "frames": [{
@@ -958,7 +976,25 @@ cam_name = "east_hall"
 libraries/ = SubResource("AnimationLibrary_vtl0w")
 autoplay = &"default"
 
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1153521939]
+z_index = 1
+position = Vector2(638.5, 358.5)
+scale = Vector2(6.395, 3.595)
+copy_mode = 2
+
+[node name="Static" type="ColorRect" parent="." unique_id=1860402467]
+z_index = 1
+material = SubResource("ShaderMaterial_ptwrk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Map" type="AnimatedSprite2D" parent="." unique_id=754572990]
+z_index = 1
 texture_filter = 1
 position = Vector2(1084, 524)
 sprite_frames = SubResource("SpriteFrames_45qmh")
@@ -1121,6 +1157,7 @@ script = ExtResource("88_26fd2")
 cam_name = "restrooms"
 
 [node name="REC" type="AnimatedSprite2D" parent="." unique_id=1794146091]
+z_index = 1
 position = Vector2(55, 55)
 sprite_frames = SubResource("SpriteFrames_wvajc")
 autoplay = "default"
