@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://8ilyv5gifhkt" path="res://Scripts/Main Menu/main.gd" id="1_5326e"]
 [ext_resource type="Theme" uid="uid://dg6nfqfee2nik" path="res://Assets/theme.tres" id="2_l2o7r"]
-[ext_resource type="PackedScene" uid="uid://c7e18wb7knrhf" path="res://Scenes/Menu/customnight.tscn" id="3_juwjy"]
-[ext_resource type="PackedScene" uid="uid://c2hcan7a64ttm" path="res://Scenes/Menu/menu.tscn" id="4_t8w0y"]
+[ext_resource type="PackedScene" uid="uid://c7e18wb7knrhf" path="res://Scenes/Main Menu/customnight.tscn" id="3_juwjy"]
+[ext_resource type="PackedScene" uid="uid://c2hcan7a64ttm" path="res://Scenes/Main Menu/menu.tscn" id="4_t8w0y"]
 [ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="5_eybw1"]
 [ext_resource type="Texture2D" uid="uid://c70ur0ab2mbh7" path="res://Assets/2.5-START_TO_END/NEWSPAPER.png" id="6_hu3kb"]
 

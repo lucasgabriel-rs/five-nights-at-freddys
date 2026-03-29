@@ -7,9 +7,9 @@ var lights: String = "none"
 @onready var left_door: Area2D = $Office/Doors/LeftDoor
 @onready var freddy: Button = $Office/Freddy
 @onready var noise: AudioStreamPlayer = $Office/Freddy/Noise
-@onready var monitor: AnimatedSprite2D = $CamView/CamEffects/Monitor
-@onready var light: AudioStreamPlayer = $Sounds/Light
-@onready var windows: AudioStreamPlayer = $Sounds/Windows
+@onready var tablet: AnimatedSprite2D = %Tablet
+@onready var light: AudioStreamPlayer = $Light
+@onready var windows: AudioStreamPlayer = $Windows
 
 
 func _ready() -> void:
@@ -29,19 +29,19 @@ func _ready() -> void:
 
 func _on_right_light_input(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed and not monitor.toggle:
+		if event.pressed and not tablet.toggle:
 			_light_on("right_light")
 		else: _light_off()
 
 func _on_left_light_input(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed and not monitor.toggle:
+		if event.pressed and not tablet.toggle:
 			_light_on("left_light")
 		else: _light_off()
 
 
 func _on_mouse_entered() -> void:
-	if not monitor.toggle:
+	if not tablet.toggle:
 		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 
 

@@ -1,0 +1,29 @@
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://dnlxyuj08k5ri"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_c1sp1"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v0y28"]
+animation = &"static_boot"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qi7yf"]
+animation = &"cam_scroll"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uqrg5"]
+animation = &"static_idle"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_yw7ad"]
+
+[resource]
+graph_offset = Vector2(-309.9295, 51.48456)
+nodes/output/position = Vector2(520, 120)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_uqrg5")
+nodes/Idle/position = Vector2(-180, 180)
+nodes/Boot/node = SubResource("AnimationNodeAnimation_v0y28")
+nodes/Boot/position = Vector2(-180, 360)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_yw7ad")
+nodes/OneShot/position = Vector2(60, 160)
+nodes/CameraScroll/node = SubResource("AnimationNodeAnimation_qi7yf")
+nodes/CameraScroll/position = Vector2(60, 460)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_c1sp1")
+nodes/Add2/position = Vector2(300, 120)
+node_connections = [&"output", 0, &"Add2", &"OneShot", 0, &"Idle", &"OneShot", 1, &"Boot", &"Add2", 0, &"OneShot", &"Add2", 1, &"CameraScroll"]

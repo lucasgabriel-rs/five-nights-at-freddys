@@ -2,9 +2,8 @@ extends Button
 
 @export var cam_name: String
 
-@onready var cameras: Node2D = $"../../Cameras"
+@onready var cam_rooms: Node2D = $"../../CamRooms"
 @onready var click: AudioStreamPlayer = $"../../Click"
-
 
 
 func _ready() -> void:
@@ -12,5 +11,6 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	cameras.watch = cam_name
+	cam_rooms.watch = cam_name
 	click.play()
+	cam_rooms.play_static()
