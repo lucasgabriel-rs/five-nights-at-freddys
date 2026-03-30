@@ -20,6 +20,7 @@ const CONNECTIONS: Dictionary = {
 
 @onready var timer: Timer = Timer.new()
 @onready var left_door: Area2D = $"../../OfficeElements/Office/Doors/LeftDoor"
+@onready var cam_rooms: Node2D = $"../../CamerasElements/CamRooms"
 
 
 func _ready() -> void:
@@ -39,3 +40,5 @@ func _mov_opportunity() -> void:
 			if not left_door.is_close:
 				print("jumpscare!")
 				get_tree().quit()
+	
+	cam_rooms.update_cams()

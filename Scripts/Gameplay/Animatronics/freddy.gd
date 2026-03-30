@@ -30,7 +30,6 @@ func _ready() -> void:
 	timer.start()
 
 func _mov_opportunity() -> void:
-	print(pos)
 	if lvl_ai >= randi_range(1, 20):
 		var options = CONNECTIONS[pos]
 		pos = options.pick_random()

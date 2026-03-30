@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
-@onready var cameras: Node2D = get_parent()
 @export var cam_name: String = ""
+@onready var cameras: Node2D = get_parent()
 
 func _process(_delta: float) -> void:
 	if cameras.watch == cam_name:
