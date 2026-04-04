@@ -1,8 +1,9 @@
 extends Node
 
-var time: int = 0
 @onready var hours: Label = $Hours
 @onready var timer: Timer = $Timer
+
+var time: int = 0
 
 
 func _ready() -> void:
@@ -10,10 +11,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if time > 0:
-		hours.text = "%s AM" % [str(time)]
-	else:
-		hours.text = "12 AM"
+	hours.text = "%s AM" % [str(time)] if time > 0 else "12 AM"
 
 
 func _timeout() -> void:

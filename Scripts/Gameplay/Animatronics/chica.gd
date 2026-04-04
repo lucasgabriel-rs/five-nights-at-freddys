@@ -1,5 +1,8 @@
 extends Node
 
+@onready var timer: Timer = Timer.new()
+@onready var right_door: Area2D = $"../../OfficeElements/Office/Doors/RightDoor"
+
 const INIT_POS: String = "stage"
 const WAIT_TIME: float = 4.98
 const JUMPSCARE_TIME: float = 4.98
@@ -17,9 +20,6 @@ const CONNECTIONS: Dictionary = {
 	"east_hall": ["right_door"],
 	"right_door": ["dining_area", "east_hall_corner"]
 }
-
-@onready var timer: Timer = Timer.new()
-@onready var right_door: Area2D = $"../../OfficeElements/Office/Doors/RightDoor"
 
 
 func _ready() -> void:

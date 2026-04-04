@@ -1,11 +1,11 @@
 extends AnimatedSprite2D
 
-var toggle: bool = false
-
 @onready var cam_view: Camera2D = %PlayerView
 @onready var cams: Node2D = $"../CamerasElements"
 @onready var put_up: AudioStreamPlayer = $PutUp
 @onready var put_down: AudioStreamPlayer = $PutDown
+
+var toggle: bool = false
 
 
 func _process(_delta: float) -> void:

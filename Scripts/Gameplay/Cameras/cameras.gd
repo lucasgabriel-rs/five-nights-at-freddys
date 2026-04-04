@@ -1,7 +1,5 @@
 extends Node2D
 
-var watch: String = "stage"
-
 @export var all_rooms: Dictionary[String, AnimatedSprite2D] = {}
 @export var bonnie: Node
 @export var chica: Node
@@ -10,39 +8,29 @@ var watch: String = "stage"
 
 @onready var anim_tree: AnimationTree = get_parent().get_node("AnimationTree")
 
+var watch: String = "stage"
+
 
 func update_cams() -> void:
 	# Stage
 	match [bonnie.pos, chica.pos, freddy.pos]:
 		["stage", "stage", "stage"]:
-			if randi_range(1, 1000) == 1:
-				all_rooms["stage"].play("all_looking")
-			else:
-				all_rooms["stage"].play("default")
+			all_rooms["stage"].play("all_looking" if randi_range(1, 1000) == 1 else "default")
 		[_, "stage", "stage"]:
 			all_rooms["stage"].play("chica_freddy")
 		["stage", _, "stage"]:
 			all_rooms["stage"].play("bonnie_freddy")
 		[_, _, "stage"]:
-			if randi_range(1, 10) == 1:
-				all_rooms["stage"].play("freddy_locking")
-			else:
-				all_rooms["stage"].play("freddy")
+			all_rooms["stage"].play("freddy_locking" if randi_range(1, 10) == 1 else "freddy")
 		[_, _, _]:
 			all_rooms["stage"].play("all")
 	
 	# Dining Area
 	match [bonnie.pos, chica.pos, freddy.pos]:
 		["dining_area", _, _]:
-			if randi_range(1, 2) == 1:
-				all_rooms["dining_area"].play("bonnie")
-			else:
-				all_rooms["dining_area"].play("bonnie_2")
+			all_rooms["dining_area"].play("bonnie" if randi_range(1, 2) == 1 else "bonnie_2")
 		[_, "dining_area", _]:
-			if randi_range(1, 2) == 1:
-				all_rooms["dining_area"].play("chica")
-			else:
-				all_rooms["dining_area"].play("chica_2")
+			all_rooms["dining_area"].play("chica" if randi_range(1, 2) == 1 else "chica_2")
 		[_, _, "dining_area"]:
 			all_rooms["dining_area"].play("freddy")
 		[_, _, _]:
@@ -55,10 +43,7 @@ func update_cams() -> void:
 	# Restrooms
 	match [chica.pos, freddy.pos]:
 		["restrooms", _]:
-			if randi_range(1, 2) == 1:
-				all_rooms["restrooms"].play("chica")
-			else:
-				all_rooms["restrooms"].play("chica_2")
+			all_rooms["restrooms"].play("chica" if randi_range(1, 2) == 1 else "chica_2")
 		[_, "restrooms"]:
 			all_rooms["restrooms"].play("freddy")
 		[_, _]:
@@ -74,15 +59,9 @@ func update_cams() -> void:
 	# Backstage
 	match bonnie.pos:
 		"backstage":
-			if randi_range(1, 2) == 1:
-				all_rooms["backstage"].play("bonnie")
-			else:
-				all_rooms["backstage"].play("bonnie_2")
+			all_rooms["backstage"].play("bonnie" if randi_range(1, 2) == 1 else "bonnie_2")
 		_:
-			if randi_range(1, 20) == 1:
-				all_rooms["backstage"].play("looking")
-			else:
-				all_rooms["backstage"].play("default")
+			all_rooms["backstage"].play("looking" if randi_range(1, 20) == 1 else "default")
 	
 	# West Hall Corner
 	match [bonnie.pos, foxy.pos]:
@@ -96,10 +75,7 @@ func update_cams() -> void:
 	# East Hall Corner
 	match [chica.pos, freddy.pos]:
 		["east_hall_corner", _]:
-			if randi_range(1, 20) == 1:
-				all_rooms["east_hall_corner"].play("chica_2")
-			else:
-				all_rooms["east_hall_corner"].play("chica")
+			all_rooms["east_hall_corner"].play("chica_2" if randi_range(1, 20) == 1 else "chica")
 		[_, "east_hall_corner"]:
 			all_rooms["east_hall_corner"].play("freddy")
 		[_, _]:
@@ -117,10 +93,7 @@ func update_cams() -> void:
 		"west_hall":
 			all_rooms["west_hall"].play("bonnie")
 		_:
-			if randi_range(1, 10) == 1:
-				all_rooms["west_hall"].play("poster_glitch")
-			else:
-				all_rooms["west_hall"].play("default")
+			all_rooms["west_hall"].play("poster_glitch" if randi_range(1, 10) == 1 else "default")
 	
 	# East Hall
 	match [chica.pos, freddy.pos]:

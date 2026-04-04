@@ -1,7 +1,8 @@
 extends Camera2D
 
-const START_POS: float = 805.0 
 @onready var tablet: AnimatedSprite2D = %Tablet
+
+const START_POS: float = 805.0 
 
 
 func _process(_delta: float) -> void:

@@ -22,7 +22,6 @@ config/icon="uid://8cucttuou1at"
 
 [autoload]
 
-AnimatronicsManager="*res://Scripts/animatronics_manager.gd"
 Save="*uid://ckcx3wn3x8dc1"
 
 [display]

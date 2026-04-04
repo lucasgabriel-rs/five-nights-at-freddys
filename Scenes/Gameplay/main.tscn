@@ -1629,7 +1629,6 @@ mouse_filter = 2
 
 [node name="AnimatronicsAI" type="Node" parent="." unique_id=877306598]
 script = ExtResource("41_mufob")
-bonnie_ai = 10
 
 [node name="Bonnie" type="Node" parent="AnimatronicsAI" unique_id=1995101981]
 script = ExtResource("41_ubyr5")
