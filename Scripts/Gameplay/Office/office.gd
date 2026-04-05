@@ -1,15 +1,17 @@
 extends Node
 
-var lights: String = "none"
-
 @onready var office: AnimatedSprite2D = $Office
-@onready var right_door: Area2D = $Office/Doors/RightDoor
-@onready var left_door: Area2D = $Office/Doors/LeftDoor
-@onready var freddy: Button = $Office/Freddy
+@onready var right_door: Area2D = %RightDoor
+@onready var left_door: Area2D = %LeftDoor
+@onready var freddy_button: Button = $Office/Freddy
 @onready var noise: AudioStreamPlayer = $Office/Freddy/Noise
 @onready var tablet: AnimatedSprite2D = %Tablet
 @onready var light: AudioStreamPlayer = $Light
 @onready var windows: AudioStreamPlayer = $Windows
+@onready var bonnie: Node = %Bonnie
+@onready var chica: Node = %Chica
+
+var lights: String = "none"
 
 
 func _ready() -> void:
@@ -23,8 +25,8 @@ func _ready() -> void:
 	right_door.connect("mouse_exited", _on_mouse_exited)
 	left_door.connect("mouse_exited", _on_mouse_exited)
 	
-	# Freddy's Noise
-	freddy.connect("pressed", _noise_freddy)
+	# freddy_button's Noise
+	freddy_button.connect("pressed", _noise_freddy)
 
 
 func _on_right_light_input(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
@@ -54,7 +56,10 @@ func _noise_freddy() -> void:
 
 
 func _light_on(input: String) -> void:
-	office.play(input)
+	if input == "right_light":
+		office.play("chica" if chica.pos == "right_door" else input)
+	else:
+		office.play("bonnie" if bonnie.pos == "left_door" else input)
 	light.play()
 
 

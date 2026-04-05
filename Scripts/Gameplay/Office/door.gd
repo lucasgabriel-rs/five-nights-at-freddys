@@ -1,18 +1,19 @@
 extends Area2D
 
+# Editor's object
 @export var is_right_door: bool
-var is_close: bool = false
+
+# Objects
 @onready var close: AudioStreamPlayer2D = $Close
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+# Variable
+var is_close: bool = false
 
-func _process(_delta: float) -> void:
-	if is_right_door:
-		if Input.is_action_just_pressed("right_door"):
-			_animation_door("right")
-	else:
-		if Input.is_action_just_pressed("left_door"):
-			_animation_door("left")
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("right_door" if is_right_door else "left_door"):
+		_animation_door("right" if is_right_door else "left")
 
 
 func _animation_door(door: String) -> void:
@@ -24,4 +25,3 @@ func _animation_door(door: String) -> void:
 		animated_sprite_2d.play(door)
 		close.play()
 		is_close = true
-	

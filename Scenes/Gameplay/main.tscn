@@ -284,47 +284,6 @@ animations = [{
 "loop": false,
 "name": &"default",
 "speed": 60.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("37_fv2a1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_uq144")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_l3pqy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_deea2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_506q4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_7grqa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_xi07w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_kbi85")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_j3ujm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_242dg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_644tw")
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": false,
-"name": &"down",
-"speed": 60.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h3s5w"]
@@ -1272,15 +1231,6 @@ autoplay = "default"
 frame_progress = 0.92584
 centered = false
 
-[node name="Doors" type="Node2D" parent="OfficeElements/Office" unique_id=626670601]
-
-[node name="RightDoor" parent="OfficeElements/Office/Doors" unique_id=390798772 instance=ExtResource("21_e7tfy")]
-position = Vector2(1378, 360)
-is_right_door = true
-
-[node name="LeftDoor" parent="OfficeElements/Office/Doors" unique_id=648859342 instance=ExtResource("21_e7tfy")]
-position = Vector2(187, 360)
-
 [node name="Freddy" type="Button" parent="OfficeElements/Office" unique_id=238995790]
 anchors_preset = -1
 anchor_left = 0.421
@@ -1296,6 +1246,18 @@ flat = true
 
 [node name="Noise" type="AudioStreamPlayer" parent="OfficeElements/Office/Freddy" unique_id=503176262]
 stream = ExtResource("22_itks1")
+
+[node name="Doors" type="Node2D" parent="OfficeElements" unique_id=626670601]
+position = Vector2(0, 1.14441e-05)
+
+[node name="RightDoor" parent="OfficeElements/Doors" unique_id=390798772 instance=ExtResource("21_e7tfy")]
+unique_name_in_owner = true
+position = Vector2(1378, 360)
+is_right_door = true
+
+[node name="LeftDoor" parent="OfficeElements/Doors" unique_id=648859342 instance=ExtResource("21_e7tfy")]
+unique_name_in_owner = true
+position = Vector2(187, 360)
 
 [node name="Windows" type="AudioStreamPlayer" parent="OfficeElements" unique_id=1133861988]
 stream = ExtResource("42_xgyv8")
@@ -1320,6 +1282,7 @@ stream = ExtResource("43_ubyr5")
 visible = false
 
 [node name="CamRooms" type="Node2D" parent="CamerasElements" unique_id=36072838 node_paths=PackedStringArray("all_rooms", "bonnie", "chica", "freddy", "foxy")]
+unique_name_in_owner = true
 script = ExtResource("38_67ovm")
 all_rooms = {
 "backstage": NodePath("Backstage"),
@@ -1631,9 +1594,11 @@ mouse_filter = 2
 script = ExtResource("41_mufob")
 
 [node name="Bonnie" type="Node" parent="AnimatronicsAI" unique_id=1995101981]
+unique_name_in_owner = true
 script = ExtResource("41_ubyr5")
 
 [node name="Chica" type="Node" parent="AnimatronicsAI" unique_id=469154025]
+unique_name_in_owner = true
 script = ExtResource("43_mufob")
 
 [node name="Freddy" type="Node" parent="AnimatronicsAI" unique_id=217915399]
@@ -1664,3 +1629,5 @@ wait_time = 60.0
 autostart = true
 
 [connection signal="pressed" from="OfficeElements/Office/Freddy" to="." method="_on_freddy_pressed"]
+
+[editable path="OfficeElements/Doors/RightDoor"]

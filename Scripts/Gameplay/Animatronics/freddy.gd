@@ -1,13 +1,12 @@
 extends Node
 
+@onready var right_door: Area2D = %RightDoor
+@onready var timer: Timer = Timer.new()
+@onready var cam_rooms: Node2D = %CamRooms
+
 const INIT_POS: String = "stage"
 const WAIT_TIME: float = 4.98
 const JUMPSCARE_TIME: float = 4.98
-
-var pos: String = INIT_POS
-var lvl_ai: float
-
-
 const CONNECTIONS: Dictionary = {
 	"stage": ["dining_area"],
 	"dining_area": ["restrooms", "kitchen"],
@@ -18,8 +17,8 @@ const CONNECTIONS: Dictionary = {
 	"right_door": ["dining_area", "east_hall_corner"]
 }
 
-@onready var timer: Timer = Timer.new()
-@onready var right_door: Area2D = $"../../OfficeElements/Office/Doors/RightDoor"
+var pos: String = INIT_POS
+var lvl_ai: float
 
 
 func _ready() -> void:
@@ -28,6 +27,7 @@ func _ready() -> void:
 	timer.autostart = true
 	timer.connect("timeout", _mov_opportunity)
 	timer.start()
+
 
 func _mov_opportunity() -> void:
 	if lvl_ai >= randi_range(1, 20):
@@ -39,3 +39,5 @@ func _mov_opportunity() -> void:
 			if not right_door.is_close:
 				print("jumpscare!")
 				get_tree().quit()
+	
+	cam_rooms.update_cams()
