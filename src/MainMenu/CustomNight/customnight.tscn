@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dg6nfqfee2nik" path="res://Assets/theme.tres" id="1_608um"]
 [ext_resource type="Texture2D" uid="uid://bsj328baffvv8" path="res://Assets/4-CUSTOM_NIGHT/1-FREDDY.png" id="2_vjlgo"]
 [ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="3_705gj"]
-[ext_resource type="PackedScene" uid="uid://d1g3xniwpqmq8" path="res://Scenes/Main Menu/animatronic.tscn" id="3_y6wgc"]
+[ext_resource type="PackedScene" uid="uid://d1g3xniwpqmq8" path="res://src/MainMenu/CustomNight/animatronic.tscn" id="3_y6wgc"]
 [ext_resource type="Texture2D" uid="uid://bl3jya3afpt74" path="res://Assets/4-CUSTOM_NIGHT/2-BONNIE.png" id="4_vxyy6"]
 [ext_resource type="Texture2D" uid="uid://dhewyv3rlentb" path="res://Assets/4-CUSTOM_NIGHT/3-CHICA.png" id="5_eoixf"]
 [ext_resource type="Texture2D" uid="uid://hx2vxiha57ee" path="res://Assets/4-CUSTOM_NIGHT/4-FOXY.png" id="6_rktqb"]

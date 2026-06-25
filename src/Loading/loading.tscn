@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ngnoo1mrksp2"]
 
-[ext_resource type="Script" uid="uid://bfyr8ponlwc1k" path="res://Scripts/Gameplay/loading.gd" id="1_k66n3"]
+[ext_resource type="Script" uid="uid://bfyr8ponlwc1k" path="res://src/Loading/loading.gd" id="1_k66n3"]
 [ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="2_31xe0"]
 [ext_resource type="Texture2D" uid="uid://bajlg8r2epm1u" path="res://Assets/7-NIGHT_LOADING/LITTLE_CLOCK.png" id="2_xrc7h"]
 

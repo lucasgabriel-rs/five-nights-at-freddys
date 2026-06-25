@@ -2,13 +2,14 @@ extends ColorRect
 
 var current: String = "menu"
 
-@onready var loading_scene := preload("res://Scenes/loading.tscn")
+@onready var loading_scene := preload("res://src/Loading/loading.tscn")
 
 @onready var new_game: Button = $Menu/MarginContainer/VBoxContainer/VBoxContainer/NewGame
 @onready var load_game: Button = $Menu/MarginContainer/VBoxContainer/VBoxContainer/LoadGame
 @onready var night_six: Button = $Menu/MarginContainer/VBoxContainer/VBoxContainer/Night6
 @onready var custom_night: Button = $Menu/MarginContainer/VBoxContainer/VBoxContainer/CustomNight
 @onready var exit: Button = $Menu/MarginContainer/VBoxContainer/VBoxContainer/Exit
+
 
 func _ready() -> void:
 	$"Custom Night".visible = false

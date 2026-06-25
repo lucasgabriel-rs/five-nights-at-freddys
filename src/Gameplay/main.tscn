@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://rrxva8uhuc2y"]
 
-[ext_resource type="Script" uid="uid://ch8p25g7ydfi1" path="res://Scripts/Gameplay/Office/office.gd" id="1_lnisd"]
+[ext_resource type="Script" uid="uid://ch8p25g7ydfi1" path="res://src/Gameplay/Office/office.gd" id="1_lnisd"]
 [ext_resource type="Texture2D" uid="uid://cr84kdr6y48c4" path="res://Assets/3-THE_OFFICE/1-OFFICE_BONNIE.png" id="2_iumwm"]
 [ext_resource type="Texture2D" uid="uid://d0n1s1ovq05yk" path="res://Assets/3-THE_OFFICE/JUMPSCARES/2-BONNIE/1.png" id="3_ubyr5"]
 [ext_resource type="Texture2D" uid="uid://brmyb7xjlp7ux" path="res://Assets/3-THE_OFFICE/JUMPSCARES/2-BONNIE/2.png" id="4_mufob"]
@@ -20,9 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://bc35h7icvwogb" path="res://Assets/3-THE_OFFICE/FAN/1.png" id="18_u6l7s"]
 [ext_resource type="Texture2D" uid="uid://jvt32ei0pyks" path="res://Assets/3-THE_OFFICE/FAN/2.png" id="19_l25k6"]
 [ext_resource type="Texture2D" uid="uid://dmdjbqew25kba" path="res://Assets/3-THE_OFFICE/FAN/3.png" id="20_a0gp6"]
-[ext_resource type="PackedScene" uid="uid://du3mayah3i1s" path="res://Scenes/Gameplay/Office/door.tscn" id="21_e7tfy"]
+[ext_resource type="PackedScene" uid="uid://du3mayah3i1s" path="res://src/Gameplay/Office/door.tscn" id="21_e7tfy"]
 [ext_resource type="AudioStream" uid="uid://be6lrfomhxxgr" path="res://Assets/9-AUDIO/PartyFavorraspyPart_AC01__3.wav" id="22_itks1"]
-[ext_resource type="Script" uid="uid://di2pywpugv5nv" path="res://Scripts/Gameplay/player_view.gd" id="24_s4nmu"]
+[ext_resource type="Script" uid="uid://di2pywpugv5nv" path="res://src/Gameplay/player_view.gd" id="24_s4nmu"]
 [ext_resource type="Shader" uid="uid://bexmqpcys0hvv" path="res://Shaders/perspective.gdshader" id="25_jkfxc"]
 [ext_resource type="Texture2D" uid="uid://ccpy7fswaehhc" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/1.png" id="27_644tw"]
 [ext_resource type="Texture2D" uid="uid://hvc3ynaqgpee" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/2.png" id="28_242dg"]
@@ -35,26 +35,26 @@
 [ext_resource type="Texture2D" uid="uid://vontuwveyarl" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/9.png" id="35_l3pqy"]
 [ext_resource type="Texture2D" uid="uid://fe7186qs3n8p" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/10.png" id="36_uq144"]
 [ext_resource type="Texture2D" uid="uid://csjebceixg0pe" path="res://Assets/6-CAMERAS/MONITOR_ANIMATION/11.png" id="37_fv2a1"]
-[ext_resource type="Script" uid="uid://cbx7gff6rn4a8" path="res://Scripts/Gameplay/Cameras/cameras.gd" id="38_67ovm"]
-[ext_resource type="Script" uid="uid://c6c7c4s48406j" path="res://Scripts/Gameplay/Office/tablet.gd" id="38_sidq2"]
+[ext_resource type="Script" uid="uid://cbx7gff6rn4a8" path="res://src/Gameplay/Cameras/cameras.gd" id="38_67ovm"]
+[ext_resource type="Script" uid="uid://c6c7c4s48406j" path="res://src/Gameplay/Office/tablet.gd" id="38_sidq2"]
 [ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="39_e26ug"]
 [ext_resource type="Texture2D" uid="uid://cci0myqacymih" path="res://Assets/6-CAMERAS/1-STAGE_ALL.png" id="39_yx5e4"]
 [ext_resource type="Texture2D" uid="uid://cnqtumcq6p26o" path="res://Assets/6-CAMERAS/1-STAGE_LOOKING.png" id="40_64ixo"]
-[ext_resource type="Script" uid="uid://bhysf5s4c4m04" path="res://Scripts/Gameplay/Animatronics/animatronics_ai.gd" id="41_mufob"]
+[ext_resource type="Script" uid="uid://bhysf5s4c4m04" path="res://src/Gameplay/Animatronics/animatronics_ai.gd" id="41_mufob"]
 [ext_resource type="Texture2D" uid="uid://cqeaqu07klo66" path="res://Assets/6-CAMERAS/1-STAGE_CHICA.png" id="41_oa1wk"]
-[ext_resource type="Script" uid="uid://dpepy7cvia4ea" path="res://Scripts/Gameplay/Animatronics/bonnie.gd" id="41_ubyr5"]
-[ext_resource type="Script" uid="uid://cwfumr61vaf6t" path="res://Scripts/Gameplay/time.gd" id="41_vklic"]
+[ext_resource type="Script" uid="uid://dpepy7cvia4ea" path="res://src/Gameplay/Animatronics/bonnie.gd" id="41_ubyr5"]
+[ext_resource type="Script" uid="uid://cwfumr61vaf6t" path="res://src/Gameplay/time.gd" id="41_vklic"]
 [ext_resource type="AudioStream" uid="uid://y6jvyvhymi0p" path="res://Assets/9-AUDIO/CAMERA_VIDEO_LOA_60105303.wav" id="42_iumwm"]
 [ext_resource type="AudioStream" uid="uid://dw0rvjgdk64gn" path="res://Assets/9-AUDIO/windowscare.wav" id="42_xgyv8"]
 [ext_resource type="Texture2D" uid="uid://tr6uuduupdxn" path="res://Assets/6-CAMERAS/1-STAGE_BONNIE.png" id="42_yy25t"]
-[ext_resource type="Script" uid="uid://bjkttq0f437c4" path="res://Scripts/Gameplay/Animatronics/chica.gd" id="43_mufob"]
+[ext_resource type="Script" uid="uid://bjkttq0f437c4" path="res://src/Gameplay/Animatronics/chica.gd" id="43_mufob"]
 [ext_resource type="Texture2D" uid="uid://biw1dqerv871h" path="res://Assets/6-CAMERAS/1-STAGE.png" id="43_spb2n"]
 [ext_resource type="AudioStream" uid="uid://ruhvlqorah15" path="res://Assets/9-AUDIO/put down.wav" id="43_ubyr5"]
-[ext_resource type="Script" uid="uid://bs8p8c14ifpd7" path="res://Scripts/Gameplay/Animatronics/freddy.gd" id="44_7y3rq"]
+[ext_resource type="Script" uid="uid://bs8p8c14ifpd7" path="res://src/Gameplay/Animatronics/freddy.gd" id="44_7y3rq"]
 [ext_resource type="Texture2D" uid="uid://b1u47v66be17b" path="res://Assets/6-CAMERAS/1-STAGE_BONNIE_CHICA.png" id="44_hvko6"]
 [ext_resource type="Texture2D" uid="uid://da5bse2igkwmv" path="res://Assets/6-CAMERAS/1-STAGE_FREDDY_LOOKING.png" id="45_2ql4x"]
-[ext_resource type="Script" uid="uid://bfpxmnooirfhi" path="res://Scripts/Gameplay/Animatronics/foxy.gd" id="45_ly2fy"]
-[ext_resource type="Script" uid="uid://cu7odgjkjcsej" path="res://Scripts/Gameplay/Cameras/cam_visible.gd" id="46_reid4"]
+[ext_resource type="Script" uid="uid://bfpxmnooirfhi" path="res://src/Gameplay/Animatronics/foxy.gd" id="45_ly2fy"]
+[ext_resource type="Script" uid="uid://cu7odgjkjcsej" path="res://src/Gameplay/Cameras/cam_visible.gd" id="46_reid4"]
 [ext_resource type="Texture2D" uid="uid://bswi5dhfqg3op" path="res://Assets/6-CAMERAS/2-DINING_AREA_BONNIE.png" id="47_mqhr2"]
 [ext_resource type="Texture2D" uid="uid://d0fvrij1k5rgf" path="res://Assets/6-CAMERAS/2-DINING_AREA_BONNIE_2.0.png" id="48_i0j0l"]
 [ext_resource type="Texture2D" uid="uid://4kvvct72m3qh" path="res://Assets/6-CAMERAS/2-DINING_AREA_CHICA.png" id="49_e5jiu"]
@@ -130,7 +130,7 @@
 [ext_resource type="Texture2D" uid="uid://b22vbqmvbaswn" path="res://Assets/6-CAMERAS/10-EAST_HALL_NEWS2.png" id="119_76p2o"]
 [ext_resource type="Texture2D" uid="uid://c803vnmyvuno" path="res://Assets/6-CAMERAS/10-EAST_HALL_NEWS3.png" id="120_2dy76"]
 [ext_resource type="Texture2D" uid="uid://boe1abhcvowyg" path="res://Assets/6-CAMERAS/10-EAST_HALL_NEWS4.png" id="121_2rin1"]
-[ext_resource type="Script" uid="uid://cw7v5yen03h8k" path="res://Scripts/Gameplay/Cameras/cam_button.gd" id="122_o11h7"]
+[ext_resource type="Script" uid="uid://cw7v5yen03h8k" path="res://src/Gameplay/Cameras/cam_button.gd" id="122_o11h7"]
 [ext_resource type="Texture2D" uid="uid://dimsotgnimjct" path="res://Assets/6-CAMERAS/CAM_BUTTONS/CAM_PRESSED1 (animation or stopped).png" id="123_euuqg"]
 [ext_resource type="Texture2D" uid="uid://cawqv31ct1drm" path="res://Assets/6-CAMERAS/1-MAP2.png" id="124_xaln2"]
 [ext_resource type="Texture2D" uid="uid://yrtwimo28obs" path="res://Assets/6-CAMERAS/1-MAP.png" id="125_qkfbh"]
@@ -145,7 +145,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_iumwm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie",
 "speed": 5.0
 }, {
@@ -183,7 +183,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_jso0u")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie_jumpscare",
 "speed": 60.0
 }, {
@@ -191,7 +191,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_xnkdw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chica",
 "speed": 5.0
 }, {
@@ -199,7 +199,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_13jaf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -207,7 +207,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("16_med6h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"left_light",
 "speed": 5.0
 }, {
@@ -215,7 +215,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_y1i35")
 }],
-"loop": true,
+"loop": 1,
 "name": &"right_light",
 "speed": 5.0
 }]
@@ -232,7 +232,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_a0gp6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 60.0
 }]
@@ -281,7 +281,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("37_fv2a1")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 60.0
 }]
@@ -292,7 +292,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("39_yx5e4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"all",
 "speed": 5.0
 }, {
@@ -300,7 +300,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("40_64ixo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"all_looking",
 "speed": 5.0
 }, {
@@ -308,7 +308,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("41_oa1wk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie_freddy",
 "speed": 5.0
 }, {
@@ -316,7 +316,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("42_yy25t")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chica_freddy",
 "speed": 5.0
 }, {
@@ -324,7 +324,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("43_spb2n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -332,7 +332,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("44_hvko6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"freddy",
 "speed": 5.0
 }, {
@@ -340,7 +340,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("45_2ql4x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"freddy_locking",
 "speed": 5.0
 }]
@@ -351,7 +351,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("47_mqhr2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie",
 "speed": 5.0
 }, {
@@ -359,7 +359,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("48_i0j0l")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie_2",
 "speed": 5.0
 }, {
@@ -367,7 +367,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("49_e5jiu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chica",
 "speed": 5.0
 }, {
@@ -375,7 +375,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("50_ekn7c")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chica_2",
 "speed": 5.0
 }, {
@@ -383,7 +383,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("51_4yg4r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -391,7 +391,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("52_2ovpl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"freddy",
 "speed": 5.0
 }]
@@ -402,7 +402,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("53_0kplw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -410,7 +410,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("54_eiwuc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"foxy",
 "speed": 5.0
 }, {
@@ -418,7 +418,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("55_e7vxg")
 }],
-"loop": true,
+"loop": 1,
 "name": &"foxy_2",
 "speed": 5.0
 }, {
@@ -426,12 +426,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("56_ohg8v")
 }],
-"loop": true,
+"loop": 1,
 "name": &"foxy_3",
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"its_me",
 "speed": 5.0
 }]
@@ -442,7 +442,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("57_uueb6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chica",
 "speed": 5.0
 }, {
@@ -450,7 +450,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("58_axvmh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chica_2",
 "speed": 5.0
 }, {
@@ -458,7 +458,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("59_ln828")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -466,7 +466,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("60_f8r4l")
 }],
-"loop": true,
+"loop": 1,
 "name": &"freddy",
 "speed": 5.0
 }]
@@ -477,7 +477,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("43_spb2n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -488,7 +488,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("61_s7oe7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie",
 "speed": 5.0
 }, {
@@ -496,7 +496,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("62_vusgh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie_2",
 "speed": 5.0
 }, {
@@ -504,7 +504,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("63_4507u")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -512,7 +512,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("64_e1eoy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"looking",
 "speed": 5.0
 }]
@@ -526,7 +526,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("66_a7yqw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie",
 "speed": 30.0
 }, {
@@ -537,7 +537,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("67_7ckp6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 30.0
 }, {
@@ -635,7 +635,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("98_631qp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"foxy_running",
 "speed": 12.0
 }]
@@ -646,7 +646,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("99_j8ch5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chica",
 "speed": 5.0
 }, {
@@ -654,7 +654,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("100_edn72")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chica_2",
 "speed": 5.0
 }, {
@@ -662,7 +662,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("101_bqbbe")
 }],
-"loop": true,
+"loop": 1,
 "name": &"children",
 "speed": 5.0
 }, {
@@ -670,7 +670,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("102_kunhn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -678,7 +678,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("103_ynave")
 }],
-"loop": true,
+"loop": 1,
 "name": &"freddy",
 "speed": 5.0
 }, {
@@ -686,7 +686,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("104_24xmy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"its_me",
 "speed": 5.0
 }]
@@ -697,7 +697,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("105_wy1h3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie",
 "speed": 5.0
 }, {
@@ -705,7 +705,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("106_8ub3w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -719,7 +719,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("108_kejft")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie",
 "speed": 8.0
 }, {
@@ -727,7 +727,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("109_olbwv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"bonnie_glitch",
 "speed": 5.0
 }, {
@@ -735,7 +735,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("110_4h47u")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -743,7 +743,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("111_ep73j")
 }],
-"loop": true,
+"loop": 1,
 "name": &"golden_freddy",
 "speed": 5.0
 }, {
@@ -751,7 +751,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("112_tu8v8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"poster_glitch",
 "speed": 5.0
 }]
@@ -765,7 +765,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("114_bxtc8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chica",
 "speed": 8.0
 }, {
@@ -773,7 +773,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("115_ffgb3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chica_glitch",
 "speed": 5.0
 }, {
@@ -781,7 +781,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("116_2iaf0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -789,7 +789,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("117_odjkh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"freddy",
 "speed": 5.0
 }, {
@@ -797,7 +797,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("118_0o727")
 }],
-"loop": true,
+"loop": 1,
 "name": &"new_1",
 "speed": 5.0
 }, {
@@ -805,7 +805,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("119_76p2o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"new_2",
 "speed": 5.0
 }, {
@@ -813,7 +813,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("120_2dy76")
 }],
-"loop": true,
+"loop": 1,
 "name": &"new_3",
 "speed": 5.0
 }, {
@@ -821,7 +821,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("121_2rin1")
 }],
-"loop": true,
+"loop": 1,
 "name": &"new_4",
 "speed": 5.0
 }]
@@ -835,7 +835,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("125_qkfbh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 1.0
 }]
@@ -849,7 +849,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 2.0
 }]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://1gokgffucx1g" path="res://Assets/2-MENU_TWITCHING/1.png" id="1_x5f3s"]
 [ext_resource type="Theme" uid="uid://dg6nfqfee2nik" path="res://Assets/theme.tres" id="2_3qr6s"]
-[ext_resource type="Script" uid="uid://6ptv5tc3syyl" path="res://Scripts/Main Menu/twitch.gd" id="2_uwxxs"]
+[ext_resource type="Script" uid="uid://6ptv5tc3syyl" path="res://src/MainMenu/twitch.gd" id="2_uwxxs"]
 [ext_resource type="Texture2D" uid="uid://knnc76jdca23" path="res://Assets/1-MAIN_TEXT/STAR.png" id="4_uwxxs"]
 
 [node name="Menu" type="TextureRect" unique_id=778769677]

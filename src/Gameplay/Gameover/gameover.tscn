@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://720ntnxmeyrb"]
 
 [ext_resource type="Texture2D" uid="uid://bj088nbv345wa" path="res://Assets/3-THE_OFFICE/OTHER/GAME_OVER_.png" id="1_2oltb"]
-[ext_resource type="Script" uid="uid://dnoj7k1fhhuy7" path="res://Scripts/Gameplay/gameover.gd" id="1_6kwjr"]
+[ext_resource type="Script" uid="uid://dnoj7k1fhhuy7" path="res://src/Gameplay/Gameover/gameover.gd" id="1_6kwjr"]
 [ext_resource type="FontFile" uid="uid://cn7dxaumew0nn" path="res://Assets/Fonts/CONSOLA.TTF" id="2_vnjje"]
 [ext_resource type="AudioStream" uid="uid://cxqb3uujdv8xw" path="res://Assets/9-AUDIO/ColdPresc B.wav" id="4_6kwjr"]
 [ext_resource type="Shader" uid="uid://unh71b217bct" path="res://Shaders/static.gdshader" id="4_vnjje"]

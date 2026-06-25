@@ -2,7 +2,7 @@
 
 [ext_resource type="SpriteFrames" uid="uid://c1xo283ke4rpr" path="res://Assets/Sprite Frames/door.tres" id="2_0w0cw"]
 [ext_resource type="AudioStream" uid="uid://bfv3kg1bcki1d" path="res://Assets/9-AUDIO/SFXBible_12478.wav" id="30_53vcr"]
-[ext_resource type="Script" uid="uid://dapd7on6opcgs" path="res://Scripts/Gameplay/Office/door.gd" id="30_tq7hl"]
+[ext_resource type="Script" uid="uid://dapd7on6opcgs" path="res://src/Gameplay/Office/door.gd" id="30_tq7hl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w0cw"]
 size = Vector2(223, 720)
